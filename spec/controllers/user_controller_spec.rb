@@ -39,7 +39,7 @@ describe 'User Controller' do
     end
 
     it 'redirects users who successfully login to the home page' do
-      post '/login', params={user: {username: 'phteven', password: 'password'}}
+      post '/user/login', params={username: 'phteven', password: 'password'}
       follow_redirect!
 
       expect(last_request.url).to eq 'http://example.org/'
@@ -47,7 +47,7 @@ describe 'User Controller' do
     end
 
     it 'shows users who unsuccessfully login the login page again' do
-      post '/login', params={user: {username: 'phteven', password: 'not the password'}}
+      post '/login', params={username: 'phteven', password: 'not the password'}
 
       expect(last_response.body).to have_tag('form', with: {:action => '/login', :method => 'post'})
     end
