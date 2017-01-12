@@ -1,4 +1,9 @@
-class Question < Post
-  # Remember to create a migration!
-  validates :title, presence: true
+class Question < ActiveRecord::Base
+  belongs_to :author, class_name: 'User'
+  has_many :votes
+  has_many :comments
+  has_many :answers
+
+
+  validates :title, :author_id, :content, :vote_count, presence: true
 end

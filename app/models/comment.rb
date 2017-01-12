@@ -1,3 +1,3 @@
-class Comment < Post
+class Comment < ActiveRecord::Base
  
 end
