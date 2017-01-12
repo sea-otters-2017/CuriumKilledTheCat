@@ -15,10 +15,13 @@
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="/js/application.js"></script>
 
-  <title></title>
+  <title>Pile Excess</title>
 </head>
 <body>
   <a href='/'>home</a>
+  <% if session[:user_id] %>
+    <div>Welcome <%= User.find_by_id(session[:user_id]).username %></div>
+  <% end %>
 
   <%= yield %>
 </body>
