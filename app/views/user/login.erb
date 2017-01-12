@@ -1,0 +1,14 @@
+<div>LOGIN</div>
+<% errors = @user.errors %>
+<% unless errors.empty %>
+  <ul>
+  <% errors.each do |error| %>
+    <li><%= error %></li>
+  <% end %>
+  </ul>
+<% end %>
+
+<form action='/user/login' method='POST'>
+  <input id="login_username" name="username" type="text" placeholder="Username">
+  <input id="login_password" name="password" type="text" placeholder="Password">
+</form>
