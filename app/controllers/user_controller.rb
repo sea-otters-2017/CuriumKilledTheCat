@@ -10,7 +10,7 @@ post '/user' do
   if @user.persisted?
     redirect '/'
   else
-    erb '/user/new'
+    erb :'user/new'
   end
 end
 
@@ -20,10 +20,16 @@ get '/user/login' do
 end
 
 post '/user/login' do
-  @user = User.find_by(username: params[:username]).try(authenticate)
-  erb :'user/login'
+  @user = User.find_by(username: params[:username]).try(:authenticate, params[:password])
+  if @user
+    session[:user_id] = @user.id
+    redirect '/'
+  else
+    erb :'/user/login'
+  end
 end
 
 get '/user/logout' do
-
+  session[:user_id] = nil
+  redirect '/'
 end
