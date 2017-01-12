@@ -1,5 +1,9 @@
 source 'https://rubygems.org'
 
+#security
+gem 'bcrypt'
+
+
 # PostgreSQL driver
 gem 'pg'
 
