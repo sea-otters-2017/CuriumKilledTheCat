@@ -7,15 +7,15 @@ describe Post do
 
   end
 
-  it "has author_id" do
+  xit "has author_id" do
       expect(post.author_id).to eq 1
   end
 
-  it "has content" do
+  xit "has content" do
     expect(post.content).to eq content
   end
 
-  it "has vote_count" do
+  xit "has vote_count" do
     expect(post.vote_count).to eq 0
   end 
 
