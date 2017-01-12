@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe Answer do
   before(:each) do
-    @vote = Vote.new(author_id: 1, post_id: 1)
+    @answer = Answer.new(author_id: 1, post_id: 1)
   end
 
   describe 'associations' do
