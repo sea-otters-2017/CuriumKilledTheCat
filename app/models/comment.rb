@@ -1,4 +1,4 @@
-class Comment < ActiveRecord::Base
+class Comment < Post
   belongs_to :user, foreign_key: :author_id
 
   validates :author_id, presence: true
