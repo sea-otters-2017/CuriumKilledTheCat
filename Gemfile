@@ -23,6 +23,7 @@ group :test do
   gem 'rack-test'
   gem 'rspec', '~>3.0'
   gem 'capybara'
+  gem 'rspec-html-matchers'
 end
 
 group :test, :development do
