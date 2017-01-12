@@ -101,11 +101,15 @@ namespace :db do
 
   desc "Migrate the database (options: VERSION=x, VERBOSE=false, SCOPE=blog)."
   task :migrate do
+    test_thread = ENV['RACK_ENV'] == 'test' ? nil : Thread.new { `bundle exec rake db:migrate RACK_ENV=test` }
+
     ActiveRecord::Migrator.migrations_paths << File.dirname(__FILE__) + 'db/migrate'
     ActiveRecord::Migration.verbose = ENV["VERBOSE"] ? ENV["VERBOSE"] == "true" : true
     ActiveRecord::Migrator.migrate(ActiveRecord::Migrator.migrations_paths, ENV["VERSION"] ? ENV["VERSION"].to_i : nil) do |migration|
       ENV["SCOPE"].blank? || (ENV["SCOPE"] == migration.scope)
     end
+
+    test_thread.join if test_thread
   end
 
   desc "rollback your migration--use STEP=number to step back multiple times"
