@@ -1,0 +1,14 @@
+<div>REGISTER</div>
+<% errors = @user.errors.messages %>
+<% unless errors.empty? %>
+  <ul>
+  <% errors.each do |error| %>
+    <li><%= error %></li>
+  <% end %>
+  </ul>
+<% end %>
+<form action='/user' method='POST'>
+  <input id="register_username" name="user[username]" type="text" placeholder="Username">
+  <input id="register_password" name="user[password]" type="password" placeholder="Password">
+  <input id="new_user_submit" type="submit" value="Submit">
+</form>
