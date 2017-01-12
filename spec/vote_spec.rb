@@ -8,6 +8,15 @@ describe Vote do
     it 'verifies the belongs_to association of user' do
       should belong_to(:user)
     end
+    it 'verifies the belongs_to association of comment' do
+      should belong_to(:comment)
+    end
+    it 'verifies the belongs_to association of question' do
+      should belong_to(:question)
+    end
+    it 'verifies the belongs_to association of answer' do
+      should belong_to(:answer)
+    end
   end
 
     it "returns the id of the vote's author" do
