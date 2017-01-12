@@ -7,8 +7,8 @@ describe Comment do
     end
   end
   describe 'associations' do
-    it 'it should belong to a user' do
-      should belong_to(:user)
+    it 'it should belong to a author' do
+      should belong_to(:author)
     end
   end
 
