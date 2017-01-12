@@ -1,6 +1,6 @@
 require_relative "./spec_helper"
 
-describe Post do
+xdescribe Post do
   let(:content) { 'big string'}
   let(:post) { Post.new(author_id: 1, content: content, vote_count: 0) }
   describe 'associations' do
@@ -17,7 +17,7 @@ describe Post do
 
   xit "has vote_count" do
     expect(post.vote_count).to eq 0
-  end 
+  end
 
 
 end

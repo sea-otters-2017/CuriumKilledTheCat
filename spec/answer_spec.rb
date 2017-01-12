@@ -29,10 +29,10 @@ describe Answer do
     it 'validates that the vote has an author_id' do
       should validate_presence_of(:author_id)
     end
-    it 'validates that the vote has content' do
+    it 'validates that the answer has content' do
       should validate_presence_of(:content)
     end
-    it 'validates that the vote has a vote_count' do
+    it 'validates that the answer has a vote_count' do
       should validate_presence_of(:vote_count)
     end
   end
