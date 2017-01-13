@@ -1,0 +1,21 @@
+/*
+.nav.navbar-nav li a {
+  color: black;
+}
+*/
+
+.well {
+  background-color: white;
+}
+
+#myFooter {
+  background: #222222;
+  color: #eee;
+  font-size: 11px;
+  padding: 20px;
+  margin-top: 10px;
+}
+
+.navbar-brand {
+  padding-left: 70px;
+}

@@ -1,6 +1,7 @@
-<% @questions.each do |question| %>
-  <h2><a href="/questions/<%= question.id %>"><%= question.title %></a></h2>
-  <%#= question.votes.count %>
-  <%#= question.answers.count %>
-<%end%>
-
+<div class="container">
+  <% @questions.each do |question| %>
+    <h2><a href="/questions/<%= question.id %>"><%= question.title %></a></h2>
+    <%#= question.votes.count %>
+    <%#= question.answers.count %>
+  <%end%>
+</div>
