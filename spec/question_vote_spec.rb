@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe QuestionVote do
   before(:each) do
-    @question_vote = QuestionVote.new(author_id: 1, question_id: 1, vote_count: 888)
+    @question_vote = QuestionVote.create(author_id: 1, question_id: 1, vote_count: 1)
   end
 
     describe 'associations' do
@@ -27,6 +27,18 @@ describe QuestionVote do
     describe 'validations' do
       it 'validates that the question has an author_id' do
         should validate_presence_of(:author_id)
+      end
+
+      it 'validates that the question has an question_id' do
+        should validate_presence_of(:question_id)
+      end
+
+      it 'validates that the question has an vote_count' do
+        should validate_presence_of(:vote_count)
+      end
+
+      it 'validates vote count to be a value of -1 or 1' do
+        should validate_inclusion_of(:vote_count).in_array([-1,1])
       end
     end
 end
