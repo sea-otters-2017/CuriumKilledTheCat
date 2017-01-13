@@ -33,3 +33,15 @@ get '/user/logout' do
   session[:user_id] = nil
   redirect '/'
 end
+
+get '/user/:id' do
+  @user = User.find_by_id(params[:id])
+
+  if @user && @user == User.find_by_id(session[:user_id])
+    erb :'user/personal_profile'
+  elsif @user
+    erb :'user/profile'
+  else
+    erb :'404'
+  end
+end
