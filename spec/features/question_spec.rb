@@ -22,7 +22,7 @@ describe Question do
 
   describe 'associations' do
     xit 'should have many votes' do
-      should have_many :votes
+      should have_many :question_votes
     end
 
     xit 'should have many comments' do

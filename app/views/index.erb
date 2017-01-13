@@ -1,3 +1,12 @@
 <a href="/user/login">login</a>
 <a href="/user/new">register</a>
 <a href="/user/logout">logout</a>
+
+
+<% @questions.each do |question|%>
+ <div>
+  <h2><a href="/questions/<%= question.id %>"><%=question.title%></a></h2>
+  <p><%=question.content%></p>
+  <p>VOTE COUNT:<%=question.vote_count%></p>
+ </div>
+<%end%>
