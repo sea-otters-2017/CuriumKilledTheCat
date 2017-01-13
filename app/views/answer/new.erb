@@ -1,0 +1,13 @@
+<div class="qa-holder">
+  <div class="question-display">
+    <h3><%= @question.title %></h3>
+    <p><%= @question.content %></p>
+    <p><%= @question.author.username %></p>
+  </div>
+
+  <div class="answer-form">
+    <form id="new-answer-form" method="post" action="/questions">
+      <textarea name="answer" rows="10" cols="50" placeholder="Answer here"></textarea>
+    </form>
+  </div>
+</div>
