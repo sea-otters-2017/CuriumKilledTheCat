@@ -1,0 +1,39 @@
+<div class="container-fluid" id="main">
+  <nav class="navbar " style="border-radius:0px;" >
+    <div class="container">
+      <!-- <div class="nav-collapse navbar-responsive-collapse"> -->
+        <ul class="nav navbar-nav pull-right">
+          <li>
+            <a href='/'>home</a>
+          </li>
+          <% if session[:user_id] %>
+            <li class="dropdown">
+                <a href="" class="dropdown-toggle" data-toggle="dropdown">
+                <span class="glyphicon glyphicon-user"></span<strong><%=session[:user_id]%>'><%= User.find_by_id(session[:user_id]).username %> <strong class="caret"></strong></a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a href="/user/logout">logout</a>
+                  </li>
+                </ul>
+            </li>
+          <% else %>
+            <li class="dropdown">
+              <a href="" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span> <strong>my account</strong> <strong class="caret"></strong></a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a href="/user/login" data-toggle="modal"><span class="glyphicon glyphicon-log-in"></span> login</a>
+                </li>
+                <li>
+                  <a href="/user/new"><span class="glyphicon glyphicon-save"></span> register</a>                  
+                </li>
+              </ul>
+            </li>
+          <% end %>
+        </ul>
+
+      </div>
+
+
+    <!-- </div> -->
+  </nav>
+</div>

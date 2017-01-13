@@ -21,12 +21,9 @@
 </head>
 <body>
   <div class="navbar">
-    <h1 >Pile Excess</h1>
-    <a href='/'>home</a>
-    <% if session[:user_id] %>
-      <div>Welcome <%= User.find_by_id(session[:user_id]).username %></div>
-    <% end %>
+    <%= erb :"partials/_navbar"%>
   </div>
+  <h1 >Pile Excess</h1>
 
   <%= yield %>
 </body>
