@@ -1,9 +1,3 @@
-/*
-.nav.navbar-nav li a {
-  color: black;
-}
-*/
-
 .well {
   background-color: white;
 }
@@ -18,4 +12,8 @@
 
 .navbar-brand {
   padding-left: 70px;
+}
+
+.main {
+  min-height: 555px;
 }
