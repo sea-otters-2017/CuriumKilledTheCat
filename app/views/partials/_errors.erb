@@ -1,0 +1,8 @@
+<% errors = object.errors.messages %>
+<% unless errors.empty? %>
+  <ul>
+  <% errors.each do |error| %>
+    <li><%= error.join(' ') %></li>
+  <% end %>
+  </ul>
+<% end %>
