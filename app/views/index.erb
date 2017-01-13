@@ -1,5 +1,5 @@
 <% @questions.each do |question| %>
-  <div class="question-title"><a href="/questions/<%= question.id %>"><%= question.title %></a></div>
+  <h2><a href="/questions/<%= question.id %>"><%= question.title %></a></h2>
   <%#= question.votes.count %>
   <%#= question.answers.count %>
 <%end%>
