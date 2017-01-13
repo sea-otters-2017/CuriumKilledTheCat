@@ -39,5 +39,10 @@ describe AnswerVote do
       it 'validates vote count to be a value of -1 or 1' do
         should validate_inclusion_of(:vote_count).in_array([-1,1])
       end
+
+      it 'validates that author can\'t upvote an answer more than once' do
+        subject { AnswerVote.new(author_id: 1, answer_id: 1, vote_count: 1) }
+        should validate_uniqueness_of(:author_id).scoped_to(:answer_id)
+      end
     end
 end
