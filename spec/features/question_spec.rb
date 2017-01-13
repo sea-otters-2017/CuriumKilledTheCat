@@ -21,6 +21,7 @@ describe Question do
   end
 
   describe 'associations' do
+
     it 'should have many votes' do
       should have_many :votes
     end
@@ -30,6 +31,7 @@ describe Question do
     end
 
     it 'should have many answers' do
+
       should have_many :answers
     end
   end
