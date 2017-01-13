@@ -13,3 +13,7 @@
 .navbar-brand {
   padding-left: 70px;
 }
+
+.main {
+  min-height: 555px;
+}
