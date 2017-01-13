@@ -11,7 +11,7 @@ describe Answer do
     end
 
     it 'verifies the has_many association of votes' do
-      should have_many(:votes)
+      should have_many(:answer_votes)
     end
   end
 
@@ -32,8 +32,6 @@ describe Answer do
     it 'validates that the answer has content' do
       should validate_presence_of(:content)
     end
-    it 'validates that the answer has a vote_count' do
-      should validate_presence_of(:vote_count)
-    end
+
   end
 end
