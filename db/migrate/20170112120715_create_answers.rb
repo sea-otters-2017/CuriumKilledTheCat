@@ -4,7 +4,6 @@ class CreateAnswers < ActiveRecord::Migration
       t.integer :author_id, { null: false }
       t.text :content
       t.integer :question_id
-      t.integer :vote_count
 
       t.timestamps null: false
     end
