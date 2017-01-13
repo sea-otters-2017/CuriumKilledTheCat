@@ -27,6 +27,18 @@ describe CommentVote do
       it 'validates that the comment has an author_id' do
         should validate_presence_of(:author_id)
       end
+
+      it 'validates that the comment has an comment_id' do
+        should validate_presence_of(:comment_id)
+      end
+
+      it 'validates that the comment has an vote_count' do
+        should validate_presence_of(:vote_count)
+      end
+
+      it 'validates vote count to be a value of -1 or 1' do
+        should validate_inclusion_of(:vote_count).in_array([-1,1])
+      end
     end
 
 end

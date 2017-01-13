@@ -1,0 +1,7 @@
+<%= erb :'partials/_errors', locals: { object: @question } %>
+
+<form action='/questions' method='POST'>
+  <input type='text' name='question[title]' placeholder="Title" value="<%= @question.try(:title) %>">
+  <input type='text' name='question[content]' placeholder="Question" value="<%= @question.try(:content) %>">
+  <input type='submit' value="Submit Question">
+</form>
