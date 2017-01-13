@@ -17,10 +17,10 @@ describe User do
     it 'should have many comments' do
       should have_many :comments
     end
-    xit 'should have many questions' do
+    it 'should have many questions' do
       should have_many :questions
     end
-    xit 'should have many answers' do
+    it 'should have many answers' do
       should have_many :answers
     end
     it 'should have many votes' do

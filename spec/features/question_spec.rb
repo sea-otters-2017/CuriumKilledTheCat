@@ -21,15 +21,17 @@ describe Question do
   end
 
   describe 'associations' do
-    xit 'should have many votes' do
-      should have_many :question_votes
+
+    it 'should have many votes' do
+      should have_many :votes
     end
 
-    xit 'should have many comments' do
+    it 'should have many comments' do
       should have_many :comments
     end
 
-    xit 'should have many answers' do
+    it 'should have many answers' do
+
       should have_many :answers
     end
   end
