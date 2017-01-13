@@ -8,8 +8,13 @@
   border-bottom: 10px solid transparent;
 }
 
-.question-title {
+.show-question-title {
   display: inline-block;
+  margin-left: 30px;
+}
+
+.index-question-title {
+  font-size: 20px;
 }
 
 .question-content {
