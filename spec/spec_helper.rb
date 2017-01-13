@@ -12,9 +12,11 @@ require 'shoulda-matchers'
 require 'rack/test'
 require 'capybara'
 require 'capybara/rspec'
+require 'rspec-html-matchers'
 
 RSpec.configure do |config|
   config.include Rack::Test::Methods
+  config.include RSpecHtmlMatchers
 end
 
 def app
@@ -22,3 +24,7 @@ def app
 end
 
 Capybara.app = app.new
+
+def session
+  last_request.env['rack.session']
+end

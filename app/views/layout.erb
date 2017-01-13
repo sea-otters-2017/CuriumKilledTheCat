@@ -18,11 +18,15 @@
   <title>Pile Excess</title>
 </head>
 <body>
-  <a href='/'>home</a>
-  <% if session[:user_id] %>
-    <div>Welcome <%= User.find_by_id(session[:user_id]).username %></div>
-  <% end %>
 
+  <% if session[:user_id] %>
+    <div>Welcome <a href='/user/<%=session[:user_id]%>'><%= User.find_by_id(session[:user_id]).username %></a></div>
+    <a href="/user/logout">logout</a>
+  <% else %>
+    <a href="/user/login">login</a>
+    <a href="/user/new">register</a>
+  <% end %>
+  <a href='/'>home</a>
   <%= yield %>
 </body>
 </html>
