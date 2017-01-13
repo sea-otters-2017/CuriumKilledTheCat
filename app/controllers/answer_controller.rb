@@ -1,11 +1,16 @@
 
 # goes to the form page for answering a question
 get '/questions/:id/answers/new' do
-  @question = Question.find(params[:id])
+  unless User.find_by_id(session[:user_id]).try(:id)
+    return erb :'404'
+  end
+
+  @question = Question.find_by_id(params[:id])
   erb :'answer/new'
 end
 
 post '/questions/:id/answers' do
   @question = Question.find(params[:id])
-  @answer = Answer.new(params[:answer])
+  @answer = Answer.new(content: params[:content], author_id: session_user_id, question_id: @question.id)
+  redirect "/questions/#{@question.id}"
 end
