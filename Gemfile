@@ -18,6 +18,10 @@ gem 'rake'
 
 gem 'shotgun', '~>0.9.1'
 
+# Pagination
+gem 'kaminari-sinatra'
+
+
 group :test do
   gem 'shoulda-matchers'
   gem 'rack-test'
