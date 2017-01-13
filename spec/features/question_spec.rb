@@ -14,10 +14,6 @@ describe Question do
     it 'it should require content' do
       should validate_presence_of :content
     end
-
-    it 'it should require a vote count' do
-      should validate_presence_of :vote_count
-    end
   end
 
   describe 'associations' do
