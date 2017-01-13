@@ -1,6 +1,6 @@
 class Comment < ActiveRecord::Base
   belongs_to :author, class_name: 'User'
-  has_many :questions
+  belongs_to :answer
 
-  validates :author_id, :content, :vote_count, presence: true
+  validates :author_id, :content, :answer_id, :vote_count, presence: true
 end
