@@ -4,5 +4,5 @@ class Answer < ActiveRecord::Base
   belongs_to :question
   has_many :votes, class_name: 'AnswerVote'
 
-  validates :author_id, :content, :question_id, :vote_count, presence: true
+  validates :author_id, :content, :question_id, presence: true
 end
