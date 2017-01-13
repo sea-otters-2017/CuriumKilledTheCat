@@ -21,6 +21,13 @@ describe Question do
   end
 
   describe 'associations' do
+
+
+    it 'should have many votes' do
+      should have_many :votes
+    end
+
+
     it 'should have many comments' do
       should have_many :comments
     end

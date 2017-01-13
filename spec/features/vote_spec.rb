@@ -1,6 +1,7 @@
 require 'spec_helper'
 
-xdescribe Vote do
+
+describe Vote do
   before(:each) do
     @vote = Vote.new(author_id: 1, post_id: 1)
 
