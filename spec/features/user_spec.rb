@@ -24,9 +24,14 @@ describe User do
       should have_many :answers
     end
 
-    it 'should have many votes' do
-
-      should have_many :votes
+    it 'should have many question votes' do
+      should have_many :question_votes
+    end
+    it 'should have many answer votes' do
+      should have_many :answer_votes
+    end
+    it 'should have many comment votes' do
+      should have_many :comment_votes
     end
   end
 end
