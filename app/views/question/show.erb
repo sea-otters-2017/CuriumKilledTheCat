@@ -17,33 +17,20 @@
 
   <p class="question-content"><%= @question.content %></p>
 
-
-  <div>
-    <form action="/questions/<%= @question.id %>/answers/new" method="get">
-      <button type="submit" class="btn btn-lg btn-success">New Answer</button>
+  <div id="ajax-answer">
+    <form id="new-answer-button" action="/questions/<%= @question.id %>/answers/new" method="get">
+      <button id="<%= @question.id %>" type="submit" class="btn btn-xs btn-success">New Answer</button>
     </form>
   </div>
 
-  <div id="answers">
-    <% answers = @question.answers %>
-    <ul>
-    <% answers.each do |answer| %>
-      <li>
-        <%= answer.content %>
-        <ul>
-        <% answer.comments.each do |comment| %>
-          <li>
-          <%= comment.content %>
-          </li>
-        <% end %>
-        </ul>
-        <div>
-          <form action="/questions/<%= @question.id %>/answers/<%= answer.id %>/new" method="get">
-            <button type="submit" class="btn btn-xs btn-success">New Comment</button>
-          </form>
-        </div>
-      </li>
-    <% end %>
-    </ul>
+
+  <%= erb :"partials/_answer_show" %>
+
+
+
+  <div>
+    <form action="/questions/<%= @question.id %>/comments/new" method="get">
+      <button type="submit" class="btn btn-xs btn-success">New Comment</button>
+    </form>
   </div>
 </div>

@@ -1,0 +1,16 @@
+<div id="answers">
+  <% if @question.answers %>
+    <ul id="answers-list">
+      <p><%= @question.answers.length %> Answers</p>
+      <% @question.answers.each do |answer| %>
+        <p><strong><%= answer.content %></strong></p>
+
+        <% if answer.comments %>
+          <% answer.comments.each do |comment| %>
+            <p><%= comment.content %></p>
+          <% end %>
+        <% end %>
+      <% end %>
+    </ul>
+  <% end %>
+</div>
