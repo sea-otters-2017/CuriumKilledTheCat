@@ -23,9 +23,9 @@ $(document).ready(function() {
         url:'/questions/'+ questionId + '/answers',
         data: data
       }).done(function(data){
-        console.log(data);
-        var html = '<p><strong>' + data.content + '</strong></p>';
-        $('#answers-list').append(html);
+        var paraContent = '<p><strong>' + data.content + '</strong></p>';
+        $('.answers-count').text(data.answer_count + ' Answers');
+        $('#answers-list').append(paraContent);
         $('.answer-form').remove();
         $('#new-answer-button').removeClass('hidden');
       })
