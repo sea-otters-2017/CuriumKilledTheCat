@@ -31,11 +31,13 @@ describe 'Answer Controller' do
     end
 
     it 'redirects to the question' do
-      #
-      # expect(last_response).to be_redirect
-      #
+      post(
+            "/questions/#{@question.id}/answers",
+            { content: 'some content' },
+            'rack.session' => { :user_id => @user.id }
+          )
+      
       # follow_redirect!
-
     end
   end
 
