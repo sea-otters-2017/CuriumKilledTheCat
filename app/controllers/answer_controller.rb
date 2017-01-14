@@ -12,8 +12,6 @@ get '/questions/:id/answers/new' do
 end
 
 post '/questions/:id/answers' do
-  p "***********************************************"
-
   unless session_user
     p session_user
     return erb :'404'
