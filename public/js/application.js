@@ -7,12 +7,24 @@ $(document).ready(function() {
         type: 'GET',
         url: '/new_answer/' + questionId
       }).done(function(data){
-        
-      })
+        $("#ajax-answer").append(data);
+      });
     });
 
-    $("event-listener").on('submit', '#new-answer-form', function(event) {
-
+    $("#event-listener").on('submit', '#new-answer-form', function(event) {
+      event.preventDefault();
+      var data = $(this).serialize();
+      var questionId = ($(this).children('button').prop('id'));
+      $.ajax({
+        type: 'POST',
+        url:'/questions/'+ questionId + '/answers',
+        data: data
+      }).done(function(data){
+        var html = '<p><strong>' + data.content + '</strong></p>';
+        $('#answers-list').append(html);
+        $('.answer-form').remove();
+        $('#new-answer-button').removeClass('hidden');
+      });
     });
 
 });
