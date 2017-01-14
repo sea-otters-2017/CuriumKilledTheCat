@@ -30,16 +30,12 @@ describe 'Answer Controller' do
 
     end
 
-    #WIP
-    xit 'redirects to the question' do
-      post(
-            "/questions/#{@question.id}/answers",
+    it 'redirects to the question page' do
+      post("/questions/#{@question.id}/answers",
             { content: 'some content' },
-            'rack.session' => { :user_id => @user.id }
-          )
-      
-      # follow_redirect!
+            'rack.session' => { :user_id => @user.id })
+      follow_redirect!
+      expect(last_response).to be_ok
     end
   end
-
 end
