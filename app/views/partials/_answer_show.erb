@@ -1,0 +1,9 @@
+<% if @question.answers %>
+  <p><%= @question.answers.length%> Answers</p>
+  <% @question.answers.each do |answer| %>
+    <p><strong><%= answer.content %><strong></p>
+    <% if @question.answers.comments %>
+        <%= erb :"partials/_comment_show" %>
+    <% end %>
+  <% end %>
+<% end %>

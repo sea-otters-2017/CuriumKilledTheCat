@@ -22,5 +22,7 @@ end
 
 get '/questions/:id' do
   @question = Question.find(params[:id])
-  erb :'question/show'
+  if @question
+    erb :'question/show'
+  end
 end

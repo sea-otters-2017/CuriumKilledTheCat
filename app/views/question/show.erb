@@ -17,6 +17,8 @@
 
   <p class="question-content"><%= @question.content %></p>
 
+  <%= erb :"partials/_answer_show" %>
+
   <div>
     <form action="/questions/<%= @question.id %>/answers/new" method="get">
       <input type="submit" value="New Answer">

@@ -1,0 +1,10 @@
+<% @question.answers.each do |answer| %>
+  <%= answer.content %>
+<% end %>
+
+<% if @question.answers != nil %>
+  <% p "*******************************************************"%>
+    <% p @questions.answers %>
+    <p><%= @questions.answers.length%> Answers</p>
+
+  <%end%>
