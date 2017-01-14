@@ -3,7 +3,7 @@ class Question < ActiveRecord::Base
 
   has_many :question_votes
   has_many :answers
-  has_many :comments#, through: :answers
+  has_many :comments, through: :answers
 
   validates :title, :author_id, :content, presence: true
 end

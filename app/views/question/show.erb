@@ -17,17 +17,17 @@
 
   <p class="question-content"><%= @question.content %></p>
 
-  <%= erb :"partials/_answer_show" %>
+  <%= erb :"partials/_answer_show"%>
 
   <div>
     <form action="/questions/<%= @question.id %>/answers/new" method="get">
-      <input type="submit" value="New Answer">
+      <button type="submit" class="btn btn-xs btn-success">New Answer</button>
     </form>
+  </div>
 
+  <div>
     <form action="/questions/<%= @question.id %>/comments/new" method="get">
-      <input type="submit" value="New Comment">
+      <button type="submit" class="btn btn-xs btn-success">New Comment</button>
     </form>
   </div>
 </div>
-
-
