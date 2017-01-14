@@ -1,5 +1,8 @@
 
 post '/questions/:question_id/votes' do
+  p "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+  p params[:id]
+  p params[:question_id]
   @author = User.find_by_id(session[:user_id])
   @question = Question.find_by_id(params[:question_id])
 
