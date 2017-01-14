@@ -17,23 +17,15 @@
 
   <p class="question-content"><%= @question.content %></p>
 
-
   <div>
     <form id="new-answer-button" action="/questions/<%= @question.id %>/answers/new" method="get">
-      <button id="<%= @question.id %>" type="submit" class="btn btn-lg btn-success">New Answer</button>
+      <button id="<%= @question.id %>" type="submit" class="btn btn-xs btn-success">New Answer</button>
     </form>
   </div>
 
-  <div id="answers">
-    <% answers = @question.answers %>
-    <ul>
-    <% answers.each do |answer| %>
-      <li>
-        <%= answer.content %>
-      </li>
-    <% end %>
-    </ul>
-  </div>
+  <%= erb :"partials/_answer_show" %>
+
+
 
   <div>
     <form action="/questions/<%= @question.id %>/comments/new" method="get">

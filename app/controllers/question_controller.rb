@@ -22,6 +22,7 @@ end
 
 get '/questions/:id' do
   @question = Question.find_by_id(params[:id])
+
   if @question
     erb :'question/show'
   else
