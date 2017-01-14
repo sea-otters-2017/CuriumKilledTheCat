@@ -15,9 +15,9 @@ end
   15.times do
     question = Question.create(title: Faker::Hacker.say_something_smart, content: Faker::ChuckNorris.fact, author_id: user.id)
     5.times do
-      answer = Answer.create(author_id: generate_id(user.id), content: Faker::Hipster.paragraph, question_id: question.id, vote_count: 0)
+      answer = Answer.create(author_id: generate_id(user.id), content: Faker::Hipster.paragraph, question_id: question.id)
       3.times do
-        comment = Comment.create(content: Faker::Hipster.sentence, author_id: generate_id(user.id), answer_id: answer.id, vote_count: 0)
+        comment = Comment.create(content: Faker::Hipster.sentence, author_id: generate_id(user.id), answer_id: answer.id)
       end
     end
   end
