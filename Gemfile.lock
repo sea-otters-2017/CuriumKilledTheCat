@@ -92,6 +92,7 @@ DEPENDENCIES
   capybara
   factory_girl
   faker (~> 1.6.0)
+  json
   pg
   rack-test
   rake

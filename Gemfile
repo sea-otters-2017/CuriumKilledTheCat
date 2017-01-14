@@ -3,6 +3,8 @@ source 'https://rubygems.org'
 #security
 gem 'bcrypt'
 
+#cuz we need it
+gem 'json'
 
 # PostgreSQL driver
 gem 'pg'

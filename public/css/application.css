@@ -17,3 +17,7 @@
 .main {
   min-height: 555px;
 }
+
+.hidden {
+  display: none;
+}
