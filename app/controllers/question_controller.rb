@@ -22,7 +22,10 @@ end
 
 get '/questions/:id' do
   @question = Question.find(params[:id])
+
   if @question
     erb :'question/show'
+  else
+    erb :'404'
   end
 end

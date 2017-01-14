@@ -1,9 +1,10 @@
 class Question < ActiveRecord::Base
-  belongs_to :author, class_name: 'User'
+  include Votable
 
-  has_many :question_votes
+  belongs_to :author, class_name: 'User'
+  has_many :votes, class_name: 'QuestionVote'
   has_many :answers
   has_many :comments, through: :answers
 
-  validates :title, :author_id, :content, presence: true
+  validates :title, :author_id, :content, :vote_count, presence: true
 end

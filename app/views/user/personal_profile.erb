@@ -1,1 +1,76 @@
-<h1>YOU ARE <%= @user.username %></h1>
+<div class="container">
+  <h1>welcome, <%= @user.username %></h1>
+
+  <div class="row" id="moreInfo">
+  	<div class="col-sm-12">
+  		<h3>Neat Tabbable Content</h3>
+  		<div class="tabbable">
+  			<ul class="nav nav-tabs">
+  				<li class="active"><a href="#tab1" data-toggle="tab">Stats</a></li>
+  				<li><a href="#tab2" data-toggle="tab">About Me</a></li>
+          <li><a href="#tab3" data-toggle="tab">Nunya</a></li>
+  			</ul>
+  			<div class="tab-content">
+  				<div class="tab-pane active" id="tab1">
+  					<h4><span class="glyphicon glyphicon-pencil"></span> Gimme some a dat <small>This text is small</small></h4>
+            <% @user.voted_questions.each do |question| %>
+            <p><%= question.content %></p>
+            <% end %>
+  					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+  					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+  					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+  					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+  					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+  					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+  					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+  					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+  					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+  					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+  					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+  				</div><!-- end tab-pane -->
+
+  				<div class="tab-pane" id="tab2">
+  					<h4>Something on this page<small> Stuff</small></h4>
+
+  					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+  					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+  					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+  					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+  					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+  					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+  					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+  					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+  					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+  					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+  					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+  					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+  				</div><!-- end tab-pane -->
+
+          <div class="tab-pane" id="tab3">
+  					<h4>Do we need a third tab of stuff<small> Do I even want this third tab of stuff</small></h4>
+
+  					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+  					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+  					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+  					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+  					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+  					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+  					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+  					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+  					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+  					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+  					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+  					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+  				</div><!-- end tab-pane -->
+
+  			</div><!-- end tab-content -->
+  		</div><!-- end tabbable -->
+  	</div><!-- end col-sm-6 -->
+  </div>
+</div>
