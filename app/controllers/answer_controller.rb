@@ -20,7 +20,7 @@ post '/questions/:id/answers' do
   @answer = Answer.create(content: params[:content], author_id: session_user_id, question_id: @question.id)
 
   if request.xhr?
-    hash = {content: @answer.content, author_id: @answer.author_id }
+    hash = {content: @answer.content, author_id: @answer.author_id, answer_count: @question.answers.length }
     content_type :json
     JSON.generate(hash)
   else
