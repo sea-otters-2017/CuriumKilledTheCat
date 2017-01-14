@@ -17,7 +17,7 @@
 
   <p class="question-content"><%= @question.content %></p>
 
-  <div>
+  <div id="ajax-answer">
     <form id="new-answer-button" action="/questions/<%= @question.id %>/answers/new" method="get">
       <button id="<%= @question.id %>" type="submit" class="btn btn-xs btn-success">New Answer</button>
     </form>

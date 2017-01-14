@@ -1,6 +1,6 @@
 <div class="answer-form">
   <form id="new-answer-form" method="post" action="/questions/<%= @question.id %>/answers">
     <textarea name="content" rows="10" cols="50" placeholder="Answer here"></textarea>
-    <button type="submit">Submit</button>
+    <button id="<%= @question.id %>" type="submit">Submit</button>
   </form>
 </div>
