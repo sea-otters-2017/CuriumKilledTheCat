@@ -14,6 +14,6 @@ post '/questions/:id/answers' do
     return erb :'404'
   end
   @question = Question.find(params[:id])
-  @answer = Answer.create(params[content: params[:content], author_id: session_user_id, question_id: @question.id)
+  @answer = Answer.create(content: params[:content], author_id: session_user_id, question_id: @question.id)
   redirect "/questions/#{@question.id}"
 end
