@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container vote-button-container">
   <h2 class="show-question-title"><%= @question.title %></h2>
 
   <div class="wrap-vote-button">
@@ -17,7 +17,7 @@
 
   <p class="question-content"><%= @question.content %></p>
 
-  <%= erb :"partials/_answer_show"%>
+  <%= erb :"partials/_answer_index"%>
 
   <div>
     <form action="/questions/<%= @question.id %>/answers/new" method="get">
@@ -31,3 +31,5 @@
     </form>
   </div>
 </div>
+
+
