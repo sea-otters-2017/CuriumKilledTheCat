@@ -21,6 +21,10 @@ post '/questions' do
 end
 
 get '/questions/:id' do
-  @question = Question.find(params[:id])
-  erb :'question/show'
+  @question = Question.find_by_id(params[:id])
+  if @question
+    erb :'question/show'
+  else
+    erb :'404'
+  end
 end
