@@ -8,6 +8,7 @@ end
 post '/user' do
   @user = User.create(params[:user])
   if @user.persisted?
+    session[:user_id] = @user.id
     redirect '/'
   else
     erb :'user/new'
