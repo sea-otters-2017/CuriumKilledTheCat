@@ -1,9 +1,9 @@
 <div class="container">
-  <ul>
+  <ol>
     <% @questions.each do |question| %>
       <li class="index-question-title"><a href="/questions/<%= question.id %>"><%= question.title %></a></li>
       <%#= question.votes.count %>
       <%#= question.answers.count %>
     <%end%>    
-  </ul>
+  </ol>
 </div>
