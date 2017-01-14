@@ -6,5 +6,5 @@ class Question < ActiveRecord::Base
   has_many :answers
   has_many :comments, through: :answers
 
-  validates :title, :author_id, :content, :vote_count, presence: true
+  validates :title, :author_id, :content, presence: true
 end
