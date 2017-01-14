@@ -28,7 +28,3 @@ get '/questions/:id' do
     erb :'404'
   end
 end
-
-post '/questions/:question_id/votes' do
-  
-end
