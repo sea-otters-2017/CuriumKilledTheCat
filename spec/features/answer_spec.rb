@@ -26,7 +26,7 @@ describe Answer do
   end
 
   describe 'validations' do
-    it 'validates that the vote has an author_id' do
+    it 'validates that the answer has an author_id' do
       should validate_presence_of(:author_id)
     end
     it 'validates that the answer has content' do
