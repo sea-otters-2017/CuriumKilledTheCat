@@ -3,12 +3,12 @@ require 'sinatra/json'
 
 # goes to the form page for answering a question
 get '/questions/:id/answers/new' do
-  # unless session_user
-  #   return erb :'404'
-  # end
-  #
-  # @question = Question.find_by_id(params[:id])
-  # erb :'answer/new'
+   unless session_user
+     return erb :'404'
+   end
+  
+   @question = Question.find_by_id(params[:id])
+   erb :'answer/new'
 end
 
 post '/questions/:id/answers' do
