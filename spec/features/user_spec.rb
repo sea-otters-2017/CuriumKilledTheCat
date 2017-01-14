@@ -33,5 +33,14 @@ describe User do
     it 'should have many comment votes' do
       should have_many :comment_votes
     end
+    it 'should have many voted comments' do
+      should have_many :voted_comments
+    end
+    it 'should have many voted questions' do
+      should have_many :voted_questions
+    end
+    it 'should have many voted answers' do
+      should have_many :voted_answers
+    end
   end
 end

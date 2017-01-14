@@ -13,7 +13,9 @@
   			<div class="tab-content">
   				<div class="tab-pane active" id="tab1">
   					<h4><span class="glyphicon glyphicon-pencil"></span> Gimme some a dat <small>This text is small</small></h4>
-
+            <% @user.voted_questions.each do |question| %>
+            <p><%= question.content %></p>
+            <% end %>
   					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
   					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
   					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
