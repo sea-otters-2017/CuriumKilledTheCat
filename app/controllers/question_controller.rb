@@ -21,7 +21,7 @@ post '/questions' do
 end
 
 get '/questions/:id' do
-  @question = Question.find(params[:id])
+  @question = Question.find_by_id(params[:id])
 
   if @question
     erb :'question/show'
