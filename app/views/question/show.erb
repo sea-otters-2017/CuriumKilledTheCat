@@ -20,7 +20,7 @@
 
   <div>
     <form id="new-answer-button" action="/questions/<%= @question.id %>/answers/new" method="get">
-      <button type="submit" class="btn btn-lg btn-success">New Answer</button>
+      <button id="<%= @question.id %>" type="submit" class="btn btn-lg btn-success">New Answer</button>
     </form>
   </div>
 

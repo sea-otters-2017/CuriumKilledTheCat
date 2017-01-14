@@ -1,7 +1,18 @@
 $(document).ready(function() {
-  // This is called after the document has loaded in its entirety
-  // This guarantees that any elements we bind to will exist on the page
-  // when we try to bind to them
+    $("#event-listener").on('submit', '#new-answer-button', function(event) {
+      event.preventDefault();
+      var questionId = ($(this).children().prop('id'))
+      $(this).addClass('hidden');
+      $.ajax({
+        type: 'GET',
+        url: '/new_answer/' + questionId
+      }).done(function(data){
+        
+      })
+    });
 
-  // See: http://docs.jquery.com/Tutorials:Introducing_$(document).ready()
+    $("event-listener").on('submit', '#new-answer-form', function(event) {
+
+    });
+
 });
