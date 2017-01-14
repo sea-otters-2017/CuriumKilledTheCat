@@ -25,6 +25,8 @@ describe AnswerVote do
     end
 
     describe 'validations' do
+
+
       it 'validates that the answer has an author_id' do
         should validate_presence_of(:author_id)
       end
@@ -38,6 +40,11 @@ describe AnswerVote do
 
       it 'validates vote count to be a value of -1 or 1' do
         should validate_inclusion_of(:vote_count).in_array([-1,1])
+      end
+
+      subject { AnswerVote.new(answer_id: 1, vote_count: 1) }
+      it 'validates that author can\'t upvote an answer more than once' do
+        should validate_uniqueness_of(:author_id).scoped_to(:answer_id)
       end
     end
 end
