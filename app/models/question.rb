@@ -7,5 +7,5 @@ class Question < ActiveRecord::Base
   has_many :answers
 
 
-  validates :title, :author_id, :content, :vote_count, presence: true
+  validates :title, :author_id, :content, presence: true
 end
