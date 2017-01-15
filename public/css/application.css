@@ -123,14 +123,19 @@
 
 .comment-wrapper {
   width: auto;
-
-  max-width: 900px;
-  background-color: #a4c4d6;
   padding-left: 10px;
   font-size: 11px;
+}
+
+.comment-cell {
+  max-width: 900px;
+  background-color: #a4c4d6;
+
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+
+  word-wrap:break-word
 }
 
 .new-comment-wrapper {

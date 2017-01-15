@@ -6,8 +6,10 @@
       <td>
         <%= erb :'partials/_comment_vote_button', locals: { post: comment } %>
       </td>
-      <td class="comment-wrapper">
-          <%= comment.content %>
+      <td class="comment-cell" >
+      <span class="comment-wrapper">
+        <%= comment.content %>
+      </span>
       </td>
     </tr>
   <% end %>
