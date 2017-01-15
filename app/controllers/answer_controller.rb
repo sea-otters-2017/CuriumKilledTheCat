@@ -8,6 +8,7 @@ get '/questions/:id/answers/new' do
    end
 
    @question = Question.find_by_id(params[:id])
+   @answer = Answer.new
    erb :'answer/new'
 end
 
@@ -15,15 +16,29 @@ post '/questions/:id/answers' do
   unless session_user
     return erb :'404'
   end
+
   @question = Question.find(params[:id])
   @answer = Answer.create(content: params[:content], author_id: session_user_id, question_id: @question.id)
 
-  if request.xhr?
-    hash = {content: @answer.content, author_id: @answer.author_id, answer_count: @question.answers.length }
-    json hash
+  if @answer.persisted?
+
+    if request.xhr?
+      hash = {content: @answer.content, author_id: @answer.author_id, answer_count: @question.answers.length }
+      json hash
+    else
+      redirect "/questions/#{@question.id}"
+    end
+
   else
-    redirect "/questions/#{@question.id}"
+
+    if request.xhr?
+      status 404
+    else
+      erb :'/answer/new'
+    end
+
   end
+
 end
 
 get '/new_answer/:question_id' do
