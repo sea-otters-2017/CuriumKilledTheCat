@@ -21,14 +21,10 @@
     <form id="new-answer-button" action="/questions/<%= @question.id %>/answers/new" method="get">
       <button id="<%= @question.id %>" type="submit" class="btn btn-lg btn-block btn-success">New Answer</button>
     </form>
-  </div>
-
-
-  <%= erb :"partials/_answer_show" %>
-
-
-
-  <div>
-
+    
+    </div>
+      <%= erb :"partials/_answer_show" %>
+    <div>
+    
   </div>
 </div>
