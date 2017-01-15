@@ -1,5 +1,5 @@
 get '/questions/new' do
-  unless User.find_by_id(session[:user_id]).try(:id)
+  unless User.find_by_id(session_user_id).try(:id)
     return erb :'404'
   end
 
@@ -8,7 +8,7 @@ get '/questions/new' do
 end
 
 post '/questions' do
-  params[:question][:author_id] = User.find_by_id(session[:user_id]).id
+  params[:question][:author_id] = User.find_by_id(session_user_id).id
   unless params[:question][:author_id]
     return erb :'404'
   end

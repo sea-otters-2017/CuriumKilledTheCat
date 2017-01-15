@@ -1,7 +1,7 @@
 <div id="answers">
   <% if @question.answers %>
     <ul id="answers-list">
-      <p><%= @question.answers.length %> Answers</p>
+      <p class="answers-count"><%= @question.answers.length %> Answers</p>
       <% @question.answers.each do |answer| %>
         <p><strong><%= answer.content %></strong></p>
 
