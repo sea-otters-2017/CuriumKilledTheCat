@@ -27,6 +27,24 @@ body {
   display: none;
 }
 
+ul {
+  list-style-type: none;
+}
+
+#new-answer-button {
+  padding: 1em;
+  width: 100%;
+  /*max-width: 60%;*/
+}
+
+#new-comment-form-button {
+  padding: .8em;
+}
+
+#inputQuestion {
+  margin-bottom: 15px;
+}
+
 /* Ian's styling */
 
 .comments-list {
