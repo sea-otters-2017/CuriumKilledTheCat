@@ -29,3 +29,10 @@ get '/questions/:id' do
     erb :'404'
   end
 end
+
+get '/best/:question_id/:answer_id' do
+  question = Question.find_by_id(params[:question_id])
+  question.best_answer_id = params[:answer_id]
+  question.save
+  redirect '/questions/' + params[:question_id]
+end

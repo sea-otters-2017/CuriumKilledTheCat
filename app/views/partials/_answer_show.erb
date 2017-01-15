@@ -5,6 +5,21 @@
       <% answers.each do |answer| %>
 
         <tr>
+          <td>
+            <% if answer.is_best %>
+              <% state = '★' %>
+            <% else %>
+              <% state = '☆' %>
+            <% end %>
+
+            <div class='best'>
+              <% if session_user == @question.author %>
+                <a class='best' href='/best/<%= @question.id %>/<%= answer.id %>'><%= state %></a>
+              <% else %>
+                <%= state %>
+              <% end %>
+           </div>
+          </td>
           <td class="answer-vote-button-cell">
             <div class="answer-vote-button">
             <%= erb :'partials/_answer_vote_button', locals: { post: answer } %>
@@ -23,7 +38,7 @@
 
         <tr>
           <td></td>
-
+          <td></td>
           <td>
             <%= erb :'/partials/_comment_show', locals: { answer: answer } %>
           </td>
