@@ -5,7 +5,7 @@
       <% answers.each do |answer| %>
 
         <tr>
-          <td>
+          <td class="answer-vote-button-cell">
             <div class="answer-vote-button">
             <%= erb :'partials/_answer_vote_button', locals: { post: answer } %>
             </div>

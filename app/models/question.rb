@@ -6,4 +6,12 @@ class Question < ActiveRecord::Base
   has_many :answers
 
   validates :title, :author_id, :content, presence: true
+
+  def best_answer
+    @best_answer ||= Answer.new
+  end
+
+  def best_answer=(answer)
+    @best_answer = answer
+  end
 end

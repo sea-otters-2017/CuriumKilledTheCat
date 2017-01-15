@@ -16,6 +16,11 @@
 
 .main {
   min-height: 555px;
+  min-width: 400px;
+}
+
+body {
+  min-width: 400px;
 }
 
 .hidden {
@@ -67,7 +72,7 @@
 .answer-table {
   min-height: 100px;
 
-  width: auto;
+  width: 100%;
 }
 
 .answer-wrapper {
@@ -76,9 +81,14 @@
   width: 100%;
 }
 
+.answer-vote-button-cell {
+  width: 30px;
+}
+
 .answer-vote-button {
   padding-right: 10px;
   margin-top: -20px;
+  max-width: 30px;
 }
 
 .comment-arrow-up {
