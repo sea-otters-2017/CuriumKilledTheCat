@@ -19,12 +19,16 @@
 
   <h3 class="answers-count"><%= @question.answers.length %> Answers</h3>
 
+
   <%= erb :"partials/_answer_show" %>
+
 
 
   <div id="ajax-answer">
     <form id="new-answer-button" action="/questions/<%= @question.id %>/answers/new" method="get">
+
       <button id="<%= @question.id %>" type="submit" class="btn btn-lg btn-warning btn-block answer-button">Submit An Answer</button>
+
     </form>
   </div>
 

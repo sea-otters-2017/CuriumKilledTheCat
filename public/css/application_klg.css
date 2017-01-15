@@ -10,7 +10,8 @@
 
 .show-question-title {
   display: inline-block;
-  margin-left: 30px;
+  width: 850px;
+  margin-left: 15px;
 }
 
 .index-question-title {
@@ -33,7 +34,8 @@
 
 #vote-count {
   height: 25px;
-  padding-left: 5px;
+  padding-left: 6px;
+  margin-bottom: 5px;
 }
 
 .wrap-vote-button {
@@ -41,6 +43,7 @@
   height: 50px;
   display: inline-block;
   float: left;
+  margin-top: 15px;
 }
 
 
