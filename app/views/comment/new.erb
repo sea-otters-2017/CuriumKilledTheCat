@@ -10,6 +10,7 @@
     <p><%= @answer.content %></p>
     <p><%= @answer.author.username %></p>
   </div>
+  <%= erb :'partials/_errors', locals: {object: @comment} %>
   <div class="comment-form">
     <form id="new-comment-form" action='/answers/<%= @answer.id %>/new' method='post'>
       <textarea name="content" rows="5" cols="50" placeholder="Comment here"></textarea>

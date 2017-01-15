@@ -29,3 +29,20 @@ get '/questions/:id' do
     erb :'404'
   end
 end
+
+get '/best/:question_id/:answer_id' do
+  question = Question.find_by_id(params[:question_id])
+
+  unless session_user == question.author
+    return erb :'404'
+  end
+
+  if question.best_answer_id.to_s == params[:answer_id]
+    question.best_answer_id = 0
+  else
+    question.best_answer_id = params[:answer_id]
+  end
+
+  question.save
+  redirect '/questions/' + params[:question_id]
+end
