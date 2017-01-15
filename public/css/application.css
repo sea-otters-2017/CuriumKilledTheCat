@@ -22,6 +22,8 @@
   display: none;
 }
 
+/* Ian's styling */
+
 .comments-list {
   list-style: none;
 }
@@ -31,10 +33,30 @@
   margin-bottom: 50px;
 }
 
-.question-content-wrapper {
+/*.question-content-wrapper {
   display: inline-block;
-}
+}*/
 
 .answers-count {
   margin: 20px;
 }
+
+#new-answer-button {
+  text-align: center;
+  margin: 30px;
+}
+
+.answer-button {
+  background-color: #0099ff; /*twittery blue*/
+  padding: 20px;
+}
+
+.upvoted {
+  background-color: #00cc66 /*light green*/
+}
+
+.downvoted {
+  background-color: #ff6666 /*pinkish*/
+}
+
+/* end of Ian's styling */
