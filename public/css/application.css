@@ -45,6 +45,18 @@ ul {
   margin-bottom: 15px;
 }
 
+#question-td {
+  padding-bottom: 55px; 
+}
+
+#answer-td {
+  padding-bottom: 25px; 
+}
+
+#comment-downvote {
+  padding-top: 5px;
+}
+
 /* Ian's styling */
 
 .comments-list {
@@ -133,9 +145,8 @@ ul {
   font-size: 10px;
   margin-top: -15px;
   margin-left: -2px;
-  margin-bottom: 3px;
   height: 10px;
-  padding-left: 5px;
+  padding-left: 4.5px;
 }
 
 .wrap-comment-vote-button {
@@ -146,6 +157,14 @@ ul {
   width: 100%;
   min-height: 20px;
 
+}
+
+#login_password {
+ margin-bottom: 15px; 
+}
+
+#register_password {
+ margin-bottom: 15px; 
 }
 
 .comment-wrapper {
