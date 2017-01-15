@@ -13,7 +13,6 @@ end
 
 post '/questions/:id/answers' do
   unless session_user
-    p session_user
     return erb :'404'
   end
   @question = Question.find(params[:id])
@@ -21,8 +20,7 @@ post '/questions/:id/answers' do
 
   if request.xhr?
     hash = {content: @answer.content, author_id: @answer.author_id, answer_count: @question.answers.length }
-    content_type :json
-    JSON.generate(hash)
+    json hash
   else
     redirect "/questions/#{@question.id}"
   end
