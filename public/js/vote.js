@@ -1,10 +1,12 @@
 $(document).ready(function() {
-  $('.vote-button-container').on('submit', '.wrap-vote-button', function(event) {
+  $('#answers-list').on('submit', '.wrap-vote-button', function(event) {
     event.preventDefault();
-    alert('Listening on vote-button-container');
-    var url = $(event.target).closest('form').attr('action');
-    var hidden_field = $(event.target).find("input[name='vote-count']");
+    alert('Listening on vote button');
+
+    var url = $(event.target).attr('action');    
+    var hidden_field = $(event.target).find("input[type='hidden']");
     var data = { vote_count: hidden_field.val() };
+    console.log(data)
 
     $.ajax({
       type: 'POST',
