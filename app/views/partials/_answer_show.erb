@@ -1,6 +1,8 @@
 <div class= 'container' id="answers">
   <% answers = @question.answers %>
   <% if answers %>
+    <% answers = sort_by_votes(answers) %>
+    <% answers = sort_best_first(answers) %>
     <table id="answers-list" class="answer-table">
       <% answers.each do |answer| %>
 
