@@ -63,7 +63,7 @@ $(document).ready(function() {
         $('#new-comment-form-button').removeClass('hidden');
       }).error(function(data){
         alert('comment can\'t be left blank')
-      }
+      })
     });
 
 });

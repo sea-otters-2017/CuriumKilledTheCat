@@ -1,5 +1,4 @@
 <div class="container question-container">
-  <h2 class="show-question-title"><%= @question.title %></h2>
 
   <div class="wrap-vote-button">
     <form id="question-upvote" action="/questions/<%= @question.id %>/votes" method="post">
@@ -14,12 +13,13 @@
       <input class="vote-button arrow-down" type="submit" value="Vote Down">
     </form>
   </div>
+  <h2 class="show-question-title"><%= @question.title %></h2>
 
   <p class="question-content"><%= @question.content %></p>
 
   <div id="ajax-answer">
     <form id="new-answer-button" action="/questions/<%= @question.id %>/answers/new" method="get">
-      <button id="<%= @question.id %>" type="submit" class="btn btn-xs btn-success">New Answer</button>
+      <button id="<%= @question.id %>" type="submit" class="btn btn-lg btn-block btn-success">New Answer</button>
     </form>
   </div>
 

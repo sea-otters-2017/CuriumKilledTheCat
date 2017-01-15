@@ -14,7 +14,7 @@
         <% end %>
         <div id="<%= answer.id %>" class='comment-wrapper'>
           <form id="new-comment-form-button" action="/questions/<%= @question.id %>/answers/<%= answer.id %>/new" method="get">
-            <button id="new-comment-button" type="submit" class="btn btn-xs btn-success">Comment On This Answer</button>
+            <button id="new-comment-button" type="submit" class="btn btn-xs btn-warning">Comment On This Answer</button>
           </form>
         </div>
       <% end %>
