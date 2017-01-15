@@ -6,15 +6,17 @@
         <p><strong><%= answer.content %></strong></p>
 
         <% if answer.comments %>
-        <ul>
+        <ul id="comments-<%= answer.id %>" class="comments-list">
           <% answer.comments.each do |comment| %>
             <li><%= comment.content %></li>
           <% end %>
         </ul>
         <% end %>
-        <form action="/questions/<%= @question.id %>/answers/<%= answer.id %>/new" method="get">
-          <button type="submit" class="btn btn-xs btn-success">New Comment</button>
-        </form>
+        <div id="<%= answer.id %>" class='comment-wrapper'>
+          <form id="new-comment-form-button" action="/questions/<%= @question.id %>/answers/<%= answer.id %>/new" method="get">
+            <button id="new-comment-button" type="submit" class="btn btn-xs btn-success">Comment On This Answer</button>
+          </form>
+        </div>
       <% end %>
     </ul>
   <% end %>

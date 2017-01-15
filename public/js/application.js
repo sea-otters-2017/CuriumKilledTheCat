@@ -29,4 +29,41 @@ $(document).ready(function() {
         $('#new-answer-button').removeClass('hidden');
       })
     });
+
+    $("#event-listener").on('click', '#new-comment-button', function(event) {
+      event.preventDefault();
+      var answerId = ($(this).closest('div').prop('id'))
+      var $this = $(this)
+      $.ajax({
+        type: 'GET',
+        url: '/new_comment/' + answerId
+      }).done(function(data){
+        console.log('this', $this)
+        $this.parent().addClass('hidden');
+        $("#".concat(answerId)).append(data);
+      }).error(function(response) {
+        alert('You must be logged in to leave an answer')
+      })
+    });
+
+
+    $("#event-listener").on('submit', '#new-comment-form', function(event) {
+      event.preventDefault();
+      var data = $(this).serialize();
+      var answerId = ($(this).closest('div.comment-wrapper').prop('id'));
+
+      $.ajax({
+        type: 'POST',
+        url:'/answers/'+ answerId + '/new',
+        data: data
+      }).done(function(data){
+        var liContent = '<li>' + data.content + '</li>';
+        $('#comments-' + answerId).append(liContent);
+        $('.comment-form').remove();
+        $('#new-comment-form-button').removeClass('hidden');
+      }).error(function(data){
+        alert('comment can\'t be left blank')
+      }
+    });
+
 });
