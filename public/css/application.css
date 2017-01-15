@@ -46,6 +46,11 @@
   margin: 30px;
 }
 
+#new-comment-button {
+  background-color: #43b5f2; /*light blue*/
+  margin: 15px 0;
+}
+
 .answer-button {
   background-color: #0099ff; /*twittery blue*/
   padding: 20px;
@@ -57,6 +62,80 @@
 
 .downvoted {
   background-color: #ff6666 /*pinkish*/
+}
+
+.answer-table {
+  min-height: 100px;
+
+}
+
+.answer-wrapper {
+  padding: 20px;
+  background-color: #b4dff7;
+  width: auto;
+}
+
+.answer-vote-button {
+  padding-right: 10px;
+  margin-top: -20px;
+}
+
+.comment-arrow-up {
+  border-bottom: 5px solid #6083bc;
+  border-top: 5px solid transparent;
+}
+
+.comment-arrow-down {
+  border-top: 5px solid #6083bc;
+  border-bottom: 5px solid transparent;
+}
+
+.comment-vote-button {
+  width: 0;
+  height: 0;
+  padding: 0;
+
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  background: transparent;
+}
+
+#comment-vote-count {
+  font-size: 10px;
+  margin-top: -15px;
+  margin-left: -2px;
+  margin-bottom: 3px;
+  height: 10px;
+  padding-left: 5px;
+}
+
+.wrap-comment-vote-button {
+  margin-bottom: -10px;
+}
+
+.comment-table {
+  width: auto;
+
+  table-layout: fixed;
+  min-height: 20px;
+  max-width: 600px;
+}
+
+.comment-wrapper {
+  width: auto;
+
+  max-width: 900px;
+  background-color: #a4c4d6;
+  padding-left: 10px;
+  font-size: 11px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.new-comment-wrapper {
+  text-align: center;
+  margin: auto;
 }
 
 /* end of Ian's styling */

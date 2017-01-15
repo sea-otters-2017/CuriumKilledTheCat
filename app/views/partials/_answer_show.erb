@@ -1,24 +1,35 @@
-<div id="answers">
+<div class= 'container' id="answers">
   <% if @question.answers %>
     <ul id="answers-list">
+    <table class="answer-table">
       <% @question.answers.each do |answer| %>
-        <p><strong><%= answer.content %></strong></p>
 
-        <% if answer.comments %>
-        <div class="container">
-          <ul id="comments-<%= answer.id %>" class="comments-list">
-            <% answer.comments.each do |comment| %>
-              <li><%= comment.content %></li>
-            <% end %>
-          </ul>
-        </div>
-        <% end %>
-        <div id="<%= answer.id %>" class='comment-wrapper'>
-          <form class="new-comment-form-button" action="/questions/<%= @question.id %>/answers/<%= answer.id %>/new" method="get">
-            <button id="new-comment-button" type="submit" class="btn btn-xs btn-success">Comment On This Answer</button>
-          </form>
-        </div>
+        <tr>
+          <td>
+            <div class="answer-vote-button">
+            <%= erb :'partials/_answer_vote_button', locals: { post: answer } %>
+            </div>
+          </td>
+
+          <td>
+            <div class="answer-wrapper">
+              <p><strong><%= answer.content %></strong></p>
+
+              <% author = answer.author %>
+              <div>answered by <a href='/user/<%= author.id %>'><%= author.username %></a></div>
+            </div>
+          </td>
+
+            <tr>
+              <td></td>
+
+              <td>
+                <%= erb :'/partials/_comment_show', locals: { answer: answer } %>
+              </td>
+            </tr>
+
       <% end %>
+      </table>
     </ul>
   <% end %>
 </div>

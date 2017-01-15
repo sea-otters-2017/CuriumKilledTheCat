@@ -66,7 +66,7 @@ $(document).ready(function() {
     $("#event-listener").on('submit', '#new-comment-form', function(event) {
       event.preventDefault();
       var data = $(this).serialize();
-      var answerId = ($(this).closest('div.comment-wrapper').prop('id'));
+      var answerId = ($(this).closest('div.new-comment-wrapper').prop('id'));
 
       $.ajax({
         type: 'POST',
@@ -74,8 +74,10 @@ $(document).ready(function() {
         data: data
       }).done(function(data){
 
-        var liContent = '<li>' + data.content + '</li>';
-        $('#comments-' + answerId).append(liContent);
+        // var rowContent = '<tr><td></td><td class="comment-wrapper">' + data.content + '</td></tr>';
+        var table = '#comments-' + answerId
+        $( table + ' > tbody:last-child').append(data);
+        //$('#comments-' + answerId).append(data);
         $('.comment-form').remove();
         $('.new-comment-form-button').removeClass('hidden');
 

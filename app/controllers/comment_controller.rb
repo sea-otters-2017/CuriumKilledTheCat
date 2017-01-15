@@ -17,8 +17,9 @@ post '/answers/:id/new' do
   if @comment.persisted?
 
     if request.xhr?
-      hash = {content: @comment.content, author_id: @comment.author_id}
-      json hash
+      # hash = {content: @comment.content, author_id: @comment.author_id}
+      # json hash
+      erb :'/partials/_ajax_comment', layout: false
     else
       redirect '/questions/' + @question.id.to_s
     end
@@ -38,8 +39,7 @@ end
 
 get '/new_comment/:answer_id' do
   unless session_user
-    status 404
-    return# erb :'404', layout: false
+    return status 404
   end
 
   if request.xhr?
