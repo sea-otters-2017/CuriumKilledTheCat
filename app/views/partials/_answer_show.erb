@@ -1,7 +1,6 @@
 <div class= 'container' id="answers">
   <% if @question.answers %>
-    <ul id="answers-list">
-    <table class="answer-table">
+    <table id="answers-list" class="answer-table">
       <% @question.answers.each do |answer| %>
 
         <tr>
@@ -19,17 +18,17 @@
               <div>answered by <a href='/user/<%= author.id %>'><%= author.username %></a></div>
             </div>
           </td>
+        </tr>
 
-            <tr>
-              <td></td>
+        <tr>
+          <td></td>
 
-              <td>
-                <%= erb :'/partials/_comment_show', locals: { answer: answer } %>
-              </td>
-            </tr>
+          <td>
+            <%= erb :'/partials/_comment_show', locals: { answer: answer } %>
+          </td>
+        </tr>
 
       <% end %>
-      </table>
-    </ul>
+    </table>
   <% end %>
 </div>

@@ -23,8 +23,7 @@ post '/questions/:id/answers' do
   if @answer.persisted?
 
     if request.xhr?
-      hash = {content: @answer.content, author_id: @answer.author_id, answer_count: @question.answers.length }
-      json hash
+      erb :'/partials/_ajax_answer', layout: false
     else
       redirect "/questions/#{@question.id}"
     end

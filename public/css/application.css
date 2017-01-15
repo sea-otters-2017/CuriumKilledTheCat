@@ -115,26 +115,27 @@
 }
 
 .comment-table {
-  width: auto;
-
-
+  width: 100%;
   min-height: 20px;
-  max-width: 600px;
+
 }
 
 .comment-wrapper {
-  width: auto;
-  padding-left: 10px;
+  width: 50%;
+  padding: 0 10px;
   font-size: 11px;
 }
 
 .comment-cell {
+  width: 100%;
   max-width: 900px;
   background-color: #a4c4d6;
 
-  overflow: hidden;
+/* this will ellipses really long words but breaks the word wrapping*/
+/*  overflow: hidden;
   white-space: nowrap;
-  text-overflow: ellipsis;
+  text-overflow: ellipsis;*/
+
 
   word-wrap:break-word
 }
@@ -143,5 +144,7 @@
   text-align: center;
   margin: auto;
 }
+
+
 
 /* end of Ian's styling */

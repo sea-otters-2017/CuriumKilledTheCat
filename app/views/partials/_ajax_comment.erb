@@ -3,7 +3,11 @@
     <%= erb :'partials/_comment_vote_button', locals: { post: @comment } %>
   </td>
 
-  <td class="comment-wrapper">
-    <%= @comment.content %>
+  <td class="comment-cell">
+    <span class="comment-wrapper">
+    <% author = @comment.author %>
+      <%= @comment.content %>
+     <em><a href='/user/<%= author.id %>'><%= author.username %> </a><%= author.vote_total %></em>
+    </span>
   </td>
 </tr>

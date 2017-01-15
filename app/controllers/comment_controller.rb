@@ -15,10 +15,8 @@ post '/answers/:id/new' do
   @question = @answer.question
 
   if @comment.persisted?
-
+    p 'it perrrrrsssssisisisisisists'
     if request.xhr?
-      # hash = {content: @comment.content, author_id: @comment.author_id}
-      # json hash
       erb :'/partials/_ajax_comment', layout: false
     else
       redirect '/questions/' + @question.id.to_s

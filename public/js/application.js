@@ -29,9 +29,8 @@ $(document).ready(function() {
         data: data
 
       }).done(function(data){
-        var paraContent = '<p><strong>' + data.content + '</strong></p>';
-        $('.answers-count').text(data.answer_count + ' Answers');
-        $('#answers-list').append(paraContent);
+
+        $('#answers-list').append(data);
         $('.answer-form').remove();
         $('#new-answer-button').removeClass('hidden');
 
@@ -74,10 +73,9 @@ $(document).ready(function() {
         data: data
       }).done(function(data){
 
-        // var rowContent = '<tr><td></td><td class="comment-wrapper">' + data.content + '</td></tr>';
         var table = '#comments-' + answerId
-        $( table + ' > tbody:last-child').append(data);
-        //$('#comments-' + answerId).append(data);
+        $(table).append(data);
+
         $('.comment-form').remove();
         $('.new-comment-form-button').removeClass('hidden');
 
