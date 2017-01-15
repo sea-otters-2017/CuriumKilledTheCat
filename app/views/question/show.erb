@@ -1,21 +1,23 @@
 <div class="container question-container">
-  <h2 class="show-question-title"><%= @question.title %></h2>
 
-  <div class="wrap-vote-button">
-    <form id="question-upvote" action="/questions/<%= @question.id %>/votes" method="post">
-      <input type="hidden" name="vote_count" value="1" />
-      <input class="vote-button arrow-up" type="submit" value="Vote Up">
-    </form>
+  <div class="question-wrapper">
+    <table>
+      <tr>
+        <td>
+          <%= erb :'/partials/_vote_button', locals: { post: @question } %>
+        </td>
 
-    <div id="vote-count"><%=@question.vote_count%></div>
-
-    <form id="question-downvote" action="/questions/<%= @question.id %>/votes" method="post">
-      <input type="hidden" name="vote_count" value="-1" />
-      <input class="vote-button arrow-down" type="submit" value="Vote Down">
-    </form>
+        <td>
+          <div class="question-content-wrapper">
+            <h2 class="show-question-title"><%= @question.title %></h2>
+            <p class="question-content"><%= @question.content %></p>
+          </div>
+        </td>
+      </tr>
+    </table>
   </div>
 
-  <p class="question-content"><%= @question.content %></p>
+  <h3 class="answers-count"><%= @question.answers.length %> Answers</h3>
 
   <div id="ajax-answer">
     <form id="new-answer-button" action="/questions/<%= @question.id %>/answers/new" method="get">

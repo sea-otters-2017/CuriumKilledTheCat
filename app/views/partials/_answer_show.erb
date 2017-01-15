@@ -1,16 +1,17 @@
 <div id="answers">
   <% if @question.answers %>
     <ul id="answers-list">
-      <p class="answers-count"><%= @question.answers.length %> Answers</p>
       <% @question.answers.each do |answer| %>
         <p><strong><%= answer.content %></strong></p>
 
         <% if answer.comments %>
-        <ul id="comments-<%= answer.id %>" class="comments-list">
-          <% answer.comments.each do |comment| %>
-            <li><%= comment.content %></li>
-          <% end %>
-        </ul>
+        <div class="container">
+          <ul id="comments-<%= answer.id %>" class="comments-list">
+            <% answer.comments.each do |comment| %>
+              <li><%= comment.content %></li>
+            <% end %>
+          </ul>
+        </div>
         <% end %>
         <div id="<%= answer.id %>" class='comment-wrapper'>
           <form class="new-comment-form-button" action="/questions/<%= @question.id %>/answers/<%= answer.id %>/new" method="get">
