@@ -1,22 +1,33 @@
-<div class="container vote-button-container">
-  <h2 class="show-question-title"><%= @question.title %></h2>
+<div class="container question-container">
 
-  <%= erb :"partials/_question_vote_button"%>
+  <div class="question-wrapper">
+    <table >
+      <tr>
+        <td id="question-td">
+          <%= erb :'/partials/_vote_button', locals: { post: @question } %>
+        </td>
 
-  <p class="question-content"><%= @question.content %></p>
+        <td>
+          <div class="question-content-wrapper">
+            <h2 class="show-question-title"><%= @question.title %></h2>
+            <p class="question-content"><%= @question.content %></p>
+          </div>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+  <h3 class="answers-count"><%= @question.answers.length %> Answers</h3>
 
   <%= erb :"partials/_answer_index"%>
 
-  <div>
-    <form action="/questions/<%= @question.id %>/answers/new" method="get">
-      <button type="submit" class="btn btn-xs btn-success">New Answer</button>
+  <div id="ajax-answer">
+    <form id="new-answer-button" action="/questions/<%= @question.id %>/answers/new" method="get">
+      <button id="<%= @question.id %>" type="submit" class="btn btn-lg btn-warning btn-block answer-button">Submit An Answer</button>
     </form>
   </div>
-
   <div>
-    <form action="/questions/<%= @question.id %>/comments/new" method="get">
-      <button type="submit" class="btn btn-xs btn-success">New Comment</button>
-    </form>
+
   </div>
 </div>
 

@@ -1,16 +1,51 @@
-<div id="answers">
-  <% if @question.answers %>
-    <ul>
-      <p><%= @question.answers.length %> Answers</p>
-      <% @question.answers.each do |answer| %>
-        <p><strong><%= answer.content %></strong></p>
+<div class= 'container' id="answers">
+  <% answers = @question.answers %>
+  <% if answers %>
+    <% answers = sort_by_votes(answers) %>
+    <% answers = sort_best_first(answers) %>
+    <table id="answers-list" class="answer-table">
+      <% answers.each do |answer| %>
 
-        <% if answer.comments %>
-          <% answer.comments.each do |comment| %>
-            <p><%= comment.content %></p>
-          <% end %>
-        <% end %>
+        <tr>
+          <td>
+            <% if answer.is_best %>
+              <% state = '★' %>
+            <% else %>
+              <% state = '☆' %>
+            <% end %>
+
+            <div class='best'>
+              <% if session_user == @question.author %>
+                <a class='best' href='/best/<%= @question.id %>/<%= answer.id %>'><%= state %></a>
+              <% else %>
+                <%= state %>
+              <% end %>
+           </div>
+          </td>
+          <td id="answer-td" class="answer-vote-button-cell">
+            <div class="answer-vote-button">
+            <%= erb :'partials/_answer_vote_button', locals: { post: answer } %>
+            </div>
+          </td>
+
+          <td>
+            <div class="answer-wrapper">
+              <p><strong><%= answer.content %></strong></p>
+
+              <% author = answer.author %>
+              <div>answered by <a href='/user/<%= author.id %>'><%= author.username %></a></div>
+            </div>
+          </td>
+        </tr>
+
+        <tr>
+          <td></td>
+          <td></td>
+          <td>
+            <%= erb :'/partials/_comment_show', locals: { answer: answer } %>
+          </td>
+        </tr>
       <% end %>
-    </ul>
+    </table>
   <% end %>
 </div>

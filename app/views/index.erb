@@ -1,9 +1,9 @@
 <div class="container">
-  <ol>
-    <% @questions.each do |question| %>
-      <li class="index-question-title"><a href="/questions/<%= question.id %>"><%= question.title %></a></li>
-      <%#= question.votes.count %>
-      <%#= question.answers.count %>
-    <%end%>    
-  </ol>
+  <% @questions.each do |question| %>
+		<hr>
+    <h2 class="index-question-title"><a href="/questions/<%= question.id %>"><%= question.title %></a></h2>
+    <%#= question.votes.count %>
+    <%#= question.answers.count %>
+  <%end%>
+  <hr>
 </div>

@@ -4,7 +4,14 @@ class Question < ActiveRecord::Base
   belongs_to :author, class_name: 'User'
   has_many :votes, class_name: 'QuestionVote'
   has_many :answers
-  has_many :comments, through: :answers
 
   validates :title, :author_id, :content, presence: true
+
+  def best_answer
+    @best_answer ||= Answer.new
+  end
+
+  def best_answer=(answer)
+    @best_answer = answer
+  end
 end

@@ -16,4 +16,219 @@
 
 .main {
   min-height: 555px;
+  min-width: 400px;
 }
+
+body {
+  min-width: 400px;
+}
+
+.hidden {
+  display: none;
+}
+
+ul {
+  list-style-type: none;
+}
+
+#new-answer-button {
+  padding: 1em;
+  width: 100%;
+  /*max-width: 60%;*/
+}
+
+#new-comment-form-button {
+  padding: .8em;
+}
+
+#inputQuestion {
+  margin-bottom: 15px;
+}
+
+#question-td {
+  padding-bottom: 55px; 
+}
+
+#answer-td {
+  padding-bottom: 25px; 
+}
+
+#comment-downvote {
+  padding-top: 5px;
+}
+
+/* Ian's styling */
+
+.comments-list {
+  list-style: none;
+}
+
+.question-wrapper {
+  border-bottom: solid 1px gray;
+  margin-bottom: 50px;
+}
+
+/*.question-content-wrapper {
+  display: inline-block;
+}*/
+
+.answers-count {
+  margin: 20px;
+}
+
+#new-answer-button {
+  text-align: center;
+  margin: 30px;
+}
+
+#new-comment-button {
+  background-color: #43b5f2; /*light blue*/
+  margin: 15px 0;
+}
+
+.answer-button {
+  background-color: #0099ff; /*twittery blue*/
+  padding: 20px;
+}
+
+.upvoted {
+  background-color: #00cc66 /*light green*/
+}
+
+.downvoted {
+  background-color: #ff6666 /*pinkish*/
+}
+
+.answer-table {
+  min-height: 100px;
+
+  width: 100%;
+}
+
+.answer-wrapper {
+  padding: 20px;
+  background-color: #b4dff7;
+  width: 100%;
+}
+
+.answer-vote-button-cell {
+  width: 30px;
+}
+
+.answer-vote-button {
+  padding-right: 10px;
+  margin-top: -20px;
+  max-width: 30px;
+}
+
+.comment-arrow-up {
+  border-bottom: 5px solid #6083bc;
+  border-top: 5px solid transparent;
+}
+
+.comment-arrow-down {
+  border-top: 5px solid #6083bc;
+  border-bottom: 5px solid transparent;
+}
+
+.comment-vote-button {
+  width: 0;
+  height: 0;
+  padding: 0;
+
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  background: transparent;
+}
+
+#comment-vote-count {
+  font-size: 10px;
+  margin-top: -15px;
+  margin-left: -2px;
+  height: 10px;
+  padding-left: 4.5px;
+}
+
+.wrap-comment-vote-button {
+  margin-bottom: -10px;
+}
+
+.comment-table {
+  width: 100%;
+  min-height: 20px;
+
+}
+
+#login_password {
+ margin-bottom: 15px; 
+}
+
+#register_password {
+ margin-bottom: 15px; 
+}
+
+.comment-wrapper {
+  width: 50%;
+  padding: 0 10px;
+  font-size: 11px;
+}
+
+.comment-cell {
+  width: 100%;
+  max-width: 900px;
+  background-color: #a4c4d6;
+  border: solid 1px gray;
+
+/* this will ellipses really long words but breaks the word wrapping*/
+/*  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;*/
+
+
+  word-wrap:break-word
+}
+
+.new-comment-wrapper {
+  text-align: center;
+  margin: auto;
+}
+
+.best {
+  color: gold;
+  font-size: 40px;
+
+  padding-right: 10px;
+}
+
+a.best:hover, a.best:active, a.best:link, a.best:visited{
+  color: gold;
+  text-decoration: none;
+}
+
+table.comment-table {
+  border-collapse: collapse;
+}
+table.comment-table td, table th {
+  border: 1px dotted #7f8da3;
+}
+table.comment-table tr:first-child td {
+  border-top: 0;
+}
+table.comment-table tr:last-child td {
+  border-bottom: 0;
+}
+
+table.comment-table tr td:first-child {
+  border: 0;
+}
+
+table.comment-table tr td {
+  border-left: 0;
+}
+
+table.comment-table tr td:last-child {
+  border-right: 0;
+}
+
+/* end of Ian's styling */
+
