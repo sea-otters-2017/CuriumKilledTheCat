@@ -14,7 +14,11 @@
         <h6>Navigation</h6>
         <ul class="list-unstyled">
           <li><a href="/">home</a></li>
+          <% if session_user_id %>
           <li><a href="/user/<%= session_user_id %>">profile</a></li>
+          <% else %>
+          <li><a href="/user/">profile</a></li>
+          <% end %>
         </ul>
       </div>
       <div class="col-sm-2">
