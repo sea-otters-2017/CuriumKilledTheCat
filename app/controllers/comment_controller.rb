@@ -1,8 +1,9 @@
 get '/questions/:question_id/answers/:answer_id/new' do
   @question = Question.find_by_id(params[:question_id])
   @answer = Answer.find_by_id(params[:answer_id])
+  @comment = Comment.new
   unless @question && @answer
-    erb :'404'
+    return erb :'404'
   end
   erb :'comment/new'
 end
@@ -10,21 +11,33 @@ end
 post '/answers/:id/new' do
 
   @comment = Comment.create(author_id: session_user_id, content: params[:content], answer_id: params[:id].to_i)
-  question = Answer.find_by_id(params[:id]).question
+  @answer = Answer.find_by_id(params[:id])
+  @question = @answer.question
 
+  if @comment.persisted?
+    p 'it perrrrrsssssisisisisisists'
+    if request.xhr?
+      erb :'/partials/_ajax_comment', layout: false
+    else
+      redirect '/questions/' + @question.id.to_s
+    end
 
-  if request.xhr?
-    hash = {content: @comment.content, author_id: @comment.author_id}
-    json hash
   else
-    redirect '/questions/' + question.id.to_s
+
+    if request.xhr?
+      status 404
+    else
+      erb :'comment/new'
+    end
+
   end
+
+
 end
 
 get '/new_comment/:answer_id' do
   unless session_user
-    status 404
-    return erb :'404', layout: false
+    return status 404
   end
 
   if request.xhr?

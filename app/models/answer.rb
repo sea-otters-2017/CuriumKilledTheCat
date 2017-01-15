@@ -7,4 +7,8 @@ class Answer < ActiveRecord::Base
   has_many :votes, class_name: 'AnswerVote'
 
   validates :author_id, :content, :question_id, presence: true
+
+  def is_best
+    self.question.best_answer_id == self.id
+  end
 end

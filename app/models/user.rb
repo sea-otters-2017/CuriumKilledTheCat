@@ -1,6 +1,11 @@
 require 'bcrypt'
+#require 'gravtastic'
 
 class User < ActiveRecord::Base
+  #should be able to load random avatars but file won't load even though it will in irb
+  # include Gravtastic
+  # is_gravtastic
+
   has_many :question_votes, foreign_key: :author_id
   has_many :answer_votes, foreign_key: :author_id
   has_many :comment_votes, foreign_key: :author_id

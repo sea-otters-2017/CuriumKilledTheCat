@@ -5,6 +5,8 @@
     <p><%= @question.author.username %></p>
   </div>
 
+  <%= erb :'/partials/_errors', locals: { object: @answer }%>
+
   <div class="answer-form">
     <form id="new-answer-form" method="post" action="/questions/<%= @question.id %>/answers">
       <textarea name="content" rows="10" cols="50" placeholder="Answer here"></textarea>

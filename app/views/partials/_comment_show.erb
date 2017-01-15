@@ -1,0 +1,24 @@
+
+<table  id="comments-<%= answer.id %>" class="comment-table comments-list">
+
+  <% answer.comments.each do |comment| %>
+    <tr>
+      <td>
+        <%= erb :'partials/_comment_vote_button', locals: { post: comment } %>
+      </td>
+      <td class="comment-cell" >
+        <span class="comment-wrapper">
+          <% author = comment.author %>
+          <%= comment.content %>
+          <em><a href='/user/<%= author.id %>'><%= author.username %> </a></em>
+        </span>
+      </td>
+    </tr>
+  <% end %>
+</table>
+
+<div id="<%= answer.id %>" class='new-comment-wrapper'>
+  <form class="new-comment-form-button" action="/questions/<%= @question.id %>/answers/<%= answer.id %>/new" method="get">
+    <button id="new-comment-button" type="submit" class="btn btn-xs btn-warning">Comment On This Answer</button>
+  </form>
+</div>

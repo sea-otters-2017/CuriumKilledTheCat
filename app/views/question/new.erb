@@ -1,12 +1,12 @@
 <%= erb :'partials/_errors', locals: { object: @question } %>
 
 <form class="form-horizontal" action='/questions' method='POST'>
-	<div class="form-group">	
-		<label class="col-lg-2 control-label" for="inputTitle">Title</label>
-		<div class="col-lg-10">
-		  <input class="form-control" id="inputTitle" type='text' name='question[title]' placeholder="Title" value="<%= @question.try(:title) %>">
-		</div>
-	</div>
+   <div class="form-group">
+     <label class="col-lg-2 control-label" for="inputTitle">Title</label>
+     <div class="col-lg-10">
+       <input class="form-control" id="inputTitle" type='text' name='question[title]' placeholder="Title" value="<%= @question.try(:title) %>">
+     </div>
+   </div>
 
 	<div class="form-group">
 		<label class="col-lg-2 control-label" for="inputQuestion">Content</label>
@@ -16,4 +16,6 @@
 		</div>
 	</div>
 </form>
+  
+
 

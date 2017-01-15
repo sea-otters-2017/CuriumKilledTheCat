@@ -29,6 +29,7 @@ GEM
       activesupport (>= 3.0.0)
     faker (1.6.6)
       i18n (~> 0.5)
+    gravtastic (3.2.6)
     i18n (0.7.0)
     json (1.8.2)
     mime-types (2.4.3)
@@ -92,6 +93,7 @@ DEPENDENCIES
   capybara
   factory_girl
   faker (~> 1.6.0)
+  gravtastic
   json
   pg
   rack-test
