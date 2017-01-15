@@ -6,10 +6,15 @@
         <p><strong><%= answer.content %></strong></p>
 
         <% if answer.comments %>
+        <ul>
           <% answer.comments.each do |comment| %>
-            <p><%= comment.content %></p>
+            <li><%= comment.content %></li>
           <% end %>
+        </ul>
         <% end %>
+        <form action="/questions/<%= @question.id %>/answers/<%= answer.id %>/new" method="get">
+          <button type="submit" class="btn btn-xs btn-success">New Comment</button>
+        </form>
       <% end %>
     </ul>
   <% end %>

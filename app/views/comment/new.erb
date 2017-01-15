@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="question-display">
+    <h2>Question:</h2>
+    <h3><%= @question.title %></h3>
+    <p><%= @question.content %></p>
+    <p><%= @question.author.username %></p>
+  </div>
+  <div class="answer-display">
+    <h3>Answer:</h3>
+    <p><%= @answer.content %></p>
+    <p><%= @answer.author.username %></p>
+  </div>
+  <div class="comment-form">
+    <form id="new-comment-form" action='/answers/<%= @answer.id %>/new' method='post'>
+      <textarea name="content" rows="5" cols="50" placeholder="Comment here"></textarea>
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+</div>
+
