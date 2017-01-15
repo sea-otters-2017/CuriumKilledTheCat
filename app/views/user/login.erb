@@ -3,8 +3,19 @@
   <div>username and password do not match</div>
 <% end %>
 
-<form action='/user/login' method='POST'>
-  <input id="login_username" name="username" type="text" placeholder="Username">
-  <input id="login_password" name="password" type="password" placeholder="Password">
-  <input id="new_user_submit" type="submit" value="Login">
+<form class="form-horizontal" action='/user/login' method='POST'>
+	<div class="form-group">
+		<label class="col-lg-2 control-label" for="login_username">Username</label>	
+		<div class="col-lg-10">
+	  	<input class="form-control" id="login_username" name="username" type="text" placeholder="Username">
+	  </div>
+	</div>
+
+	<div class="form-group">
+	<label class="col-lg-2 control-label" for="login_password">Password</label>
+		<div class="col-lg-10">
+		  <input class="form-control" id="login_password" name="password" type="password" placeholder="Password">
+		  <button class="btn btn-success" id="new_user_submit" type="submit">Login</button>
+	  </div>
+  </div>
 </form>
