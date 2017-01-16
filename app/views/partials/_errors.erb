@@ -1,8 +1,8 @@
 <% errors = object.errors.messages %>
 <% unless errors.empty? %>
-  <ul>
+  <ul class="errors">
   <% errors.each do |error| %>
-    <li><%= error.join(' ') %></li>
+    <li><%= error.join(' ').capitalize %></li>
   <% end %>
   </ul>
 <% end %>

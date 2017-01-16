@@ -1,5 +1,10 @@
 <tr>
-  <td>
+  <td class="star-cell">
+    <div class="best">
+    ☆
+    </div>
+  </td>
+  <td class="answer-vote-button">
     <div class="answer-vote-button">
     <%= erb :'partials/_answer_vote_button', locals: { post: @answer } %>
     </div>
@@ -16,6 +21,7 @@
 </tr>
 
 <tr>
+  <td></td>
   <td></td>
 
   <td>
