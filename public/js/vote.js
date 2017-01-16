@@ -2,7 +2,7 @@ $(document).ready(function() {
   $('#event-listener').on('submit', '.wrap-vote-button', function(event) {
     event.preventDefault()
 
-    var url = $(event.target).attr('action')   
+    var url = $(event.target).attr('action')
     var hidden_field = $(event.target).find("input[type='hidden']")
     var data = { vote_count: hidden_field.val() }
     var parent = $(event.target).closest('.wrap-vote-button')
@@ -17,7 +17,7 @@ $(document).ready(function() {
         $(dataTarget).html(response)
       }
     }).error(function(response) {
-        alert(response)
-    })    
+        alert('you must be logged in to vote')
+    })
   })
 });
