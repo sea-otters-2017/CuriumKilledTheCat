@@ -16,7 +16,7 @@
 
             <div class='best'>
               <% if session_user == @question.author %>
-                <a class='best' href='/best/<%= @question.try(:id) %>/<%= answer.try(:id) %>'><%= state %></a>
+                <a class='best' href='/best/<%= @question.id %>/<%= answer.id %>'><%= state %></a>
               <% else %>
                 <%= state %>
               <% end %>
@@ -33,7 +33,7 @@
               <p><strong><%= answer.content %></strong></p>
 
               <% author = answer.author %>
-              <div><em>answered by <a href='/user/<%= author.try(:id) %>'><%= author.try(:username) %></a> <small>on <%= answer.created_at.to_formatted_s(:long_ordinal) %></small></em></div>
+              <div><em>answered by <a href='/user/<%= author.id %>'><%= author.username %></a> <small>on <%= answer.created_at.to_formatted_s(:long_ordinal) %></small></em></div>
             </div>
           </td>
         </tr>
