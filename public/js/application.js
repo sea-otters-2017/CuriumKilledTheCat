@@ -58,7 +58,7 @@ $(document).ready(function() {
         $('#new-comment-form').children('textarea').focus();
 
       }).error(function(response) {
-        alert('You must be logged in to leave an answer')
+        alert('You must be logged in to leave a comment')
       })
     });
 

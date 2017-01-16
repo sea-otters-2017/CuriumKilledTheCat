@@ -31,6 +31,13 @@ ul {
   list-style-type: none;
 }
 
+.answer-form {
+  position: fixed;
+  background-color: blue;
+  top: 30%;
+  left: 30%;
+}
+
 #new-answer-button {
   padding: 1em;
   width: 100%;
@@ -46,11 +53,11 @@ ul {
 }
 
 #question-td {
-  padding-bottom: 55px; 
+  padding-bottom: 55px;
 }
 
 #answer-td {
-  padding-bottom: 25px; 
+  padding-bottom: 25px;
 }
 
 #comment-downvote {
@@ -160,11 +167,11 @@ ul {
 }
 
 #login_password {
- margin-bottom: 15px; 
+ margin-bottom: 15px;
 }
 
 #register_password {
- margin-bottom: 15px; 
+ margin-bottom: 15px;
 }
 
 .comment-wrapper {
@@ -231,4 +238,3 @@ table.comment-table tr td:last-child {
 }
 
 /* end of Ian's styling */
-
