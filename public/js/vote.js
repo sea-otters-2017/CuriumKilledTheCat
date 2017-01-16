@@ -1,7 +1,6 @@
 $(document).ready(function() {
   $('#event-listener').on('submit', '.wrap-vote-button', function(event) {
     event.preventDefault()
-    alert('Listening on vote button')
 
     var url = $(event.target).attr('action')   
     var hidden_field = $(event.target).find("input[type='hidden']")
@@ -17,6 +16,8 @@ $(document).ready(function() {
       success: function(response){
         $(dataTarget).html(response)
       }
+    }).error(function(response) {
+        alert(response)
     })    
   })
 });

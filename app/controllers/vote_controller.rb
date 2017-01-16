@@ -60,25 +60,24 @@ post '/comments/:comment_id/votes' do
   @question = @comment.try(:answer).try(:question)
 
   unless @author && @comment
+    return status 404 if request.xhr?
     return erb :'404'
   end
-
+  
   if @author.voted_comments.include? @comment
-    vote = CommentVote.find_by(author_id: @author.try(:id), comment_id: @comment.try(:id))
-    if vote.vote_count == params[:vote_count].to_i
-      vote.destroy
+    @vote = CommentVote.find_by(author_id: @author.try(:id), comment_id: @comment.try(:id))
+    if @vote.vote_count == params[:vote_count].to_i
+      @vote.destroy
     else
-      vote.update(:vote_count => params[:vote_count])
+      @vote.update(:vote_count => params[:vote_count])
     end
-    redirect "/questions/#{@quesion.id}"
+  else
+    @vote = CommentVote.new(author_id: @author.try(:id), comment_id: @comment.try(:id), vote_count: params[:vote_count])
   end
 
-  @vote = CommentVote.new(author_id: @author.try(:id), comment_id: @comment.try(:id), vote_count: params[:vote_count])
+  @vote.save if @vote.valid?
 
-  if @vote.valid?
-    @vote.save
-  end
-
+  return @comment.vote_count.to_s if request.xhr?
   redirect "/questions/#{@quesion.id}"
 end
 
