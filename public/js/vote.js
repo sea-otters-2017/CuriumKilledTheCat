@@ -15,7 +15,6 @@ $(document).ready(function() {
       data: data,
       dataType: "text",
       success: function(response){
-        console.log(dataTarget)
         $(dataTarget).html(response)
       }
     })    

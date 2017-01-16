@@ -4,39 +4,36 @@ post '/questions/:question_id/votes' do
   @question = Question.find_by_id(params[:question_id])
 
   unless @author && @question
+    return status 404 if request.xhr?
     return erb :'404'
   end
 
   if @author.voted_questions.include? @question
-    vote = QuestionVote.find_by(author_id: @author.try(:id), question_id: @question.try(:id))
-    if vote.vote_count == params[:vote_count].to_i
-      vote.destroy
+    @vote = QuestionVote.find_by(author_id: @author.try(:id), question_id: @question.try(:id))
+    if @vote.vote_count == params[:vote_count].to_i
+      @vote.destroy
     else
-      vote.update(:vote_count => params[:vote_count])
+      @vote.update(:vote_count => params[:vote_count])
     end
-    redirect '/questions/' + @question.id.to_s
+  else
+    @vote = QuestionVote.new(author_id: @author.try(:id), question_id: @question.try(:id), vote_count: params[:vote_count])
   end
 
-  @vote = QuestionVote.new(author_id: @author.try(:id), question_id: @question.try(:id), vote_count: params[:vote_count])
+  @vote.save if @vote.valid?
 
-  if @vote.valid?
-    @vote.save
-  end
-
-  redirect '/questions/' + @question.id.to_s
+  return @question.vote_count.to_s if request.xhr?
+  redirect "/questions/#{@quesion.id}"  
 end
 
+ 
 post '/answers/:answer_id/votes' do
   @author = session_user
   @answer = Answer.find_by_id(params[:answer_id])
   @question = @answer.try(:question)
 
   unless @author && @answer
-    if request.xhr?
-      status 404
-    else
-      return erb :'404'
-    end
+    return status 404 if request.xhr?
+    return erb :'404'
   end
 
   if @author.voted_answers.include? @answer
@@ -52,11 +49,8 @@ post '/answers/:answer_id/votes' do
 
   @vote.save if @vote.valid?
 
-  if request.xhr?
-    @answer.vote_count.to_s
-  else
-    redirect "/questions/#{@quesion.id}"
-  end
+  return @answer.vote_count.to_s if request.xhr?
+  redirect "/questions/#{@quesion.id}"
 end
 
 
