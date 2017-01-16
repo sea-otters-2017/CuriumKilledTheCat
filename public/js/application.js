@@ -22,7 +22,7 @@ $(document).ready(function() {
     $("#event-listener").on('submit', '#new-answer-form', function(event) {
       event.preventDefault();
       var data = $(this).serialize();
-      var questionId = ($(this).children('button').prop('id'));
+      var questionId = ($(this).children('div').children('.submit-answer').prop('id'));
 
       $.ajax({
         type: 'POST',
@@ -40,6 +40,12 @@ $(document).ready(function() {
 
       })
     });
+
+    $('#event-listener').on('click', '.cancel', function(event){
+      event.preventDefault();
+      $('.answer-form').remove();
+      $('#new-answer-button').removeClass('hidden');
+    })
 
     $("#event-listener").on('click', '#new-comment-button', function(event) {
       event.preventDefault();
@@ -84,5 +90,33 @@ $(document).ready(function() {
         alert('comment can\'t be left blank')
       })
     });
+
+    $('.login-list-item').on('click', function(event){
+      event.preventDefault();
+      $.ajax({
+        type: 'GET',
+        url: '/login_ajax'
+      }).done(function(response){
+        $('body').append(response);
+      })
+    })
+
+    $('body').on('click', '#new_user_cancel', function(event) {
+      event.preventDefault();
+      $('.popup-login-form').remove();
+      $('.popup-registration-form').remove();
+    });
+
+    $('.register-list-item').on('click', function(event) {
+      event.preventDefault();
+      $.ajax({
+        type: 'GET',
+        url: '/register-ajax'
+      }).done(function(response) {
+        $('body').append(response);
+      });
+    })
+
+
 
 });
