@@ -14,7 +14,15 @@
   				<div class="tab-pane active" id="tab1">
   					<h4><span class="glyphicon glyphicon-pencil"></span> Gimme some a dat <small>This text is small</small></h4>
 
-            <div style='margin: 50px'> You have <%= @user.vote_total %> upvotes</div>
+            <div style='margin: 50px'> You have <%= @user.vote_total %> upvotes
+              <p>this user has submitted the best answer on the following questions</p>
+              <% @user.best_answers.each do |answer| %>
+                <% question = answer.question %>
+
+                <p> <a href='/questions/<%=question.id%>'><%= answer.question.title %></a> </p>
+              <% end %>
+              <p>this user has submitted the best answer <%= @user.best_answers.count %> time(s)</p>
+            </div>
 <!--   					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
   					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
   					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
@@ -45,7 +53,7 @@
   				</div><!-- end tab-pane -->
 
           <div class="tab-pane" id="tab3">
-  					<h4><#%= image_tag @user.gravatar_url %><small> Do I even want this third tab of stuff</small></h4>
+  					<h4><%#= image_tag @user.gravatar_url %><small> Do I even want this third tab of stuff</small></h4>
 
   					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
   					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,

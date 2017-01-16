@@ -27,4 +27,8 @@ class User < ActiveRecord::Base
     qt = self.questions.reduce(0){|memo, question| memo + question.vote_count}
     ct + at + qt
   end
+
+  def best_answers
+    self.answers.select{ |answer| answer.is_best }
+  end
 end

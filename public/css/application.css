@@ -27,9 +27,54 @@ body {
   display: none;
 }
 
+.popup-login-form, .popup-registration-form {
+  position: fixed;
+  background-color: #2d4160;
+  top: 30%;
+  left: 30%;
+  width: 30%;
+  padding: 20px;
+  color: white;
+  border-radius: 5px;
+  box-shadow: 0px 0px 30px 5px gold;
+}
+
+.login-button, .login-button:hover, .login-button:link, .login-button:active, .cancel-button, .cancel-button:hover, .cancel-button:link, .cancel-button:active {
+  background-color: #6d8fc6;
+  border-color: gray;
+}
+
+
+
+.answer-content {
+  display: block;
+}
 ul {
   list-style-type: none;
 }
+
+.answer-form {
+  position: fixed;
+  background-color: #2d4160;
+  top: 30%;
+  left: 30%;
+  padding: 20px;
+  border-radius: 5px;
+  border: solid 3px #466699;
+}
+
+.answer-buttons {
+  text-align: center;
+  padding-top: 20px;
+}
+.cancel, .submit-answer {
+  padding: 5px 20px;
+  margin: 0 10px;
+  background: #466699;
+  border-color: gray;
+  font-size: 20px;
+}
+
 
 #new-answer-button {
   padding: 1em;
@@ -46,11 +91,11 @@ ul {
 }
 
 #question-td {
-  padding-bottom: 55px; 
+  padding-bottom: 55px;
 }
 
 #answer-td {
-  padding-bottom: 25px; 
+  padding-bottom: 25px;
 }
 
 #comment-downvote {
@@ -160,11 +205,11 @@ ul {
 }
 
 #login_password {
- margin-bottom: 15px; 
+ margin-bottom: 15px;
 }
 
 #register_password {
- margin-bottom: 15px; 
+ margin-bottom: 15px;
 }
 
 .comment-wrapper {
@@ -191,6 +236,10 @@ ul {
 .new-comment-wrapper {
   text-align: center;
   margin: auto;
+}
+
+.star-cell {
+  width: 40px;
 }
 
 .best {
@@ -230,5 +279,17 @@ table.comment-table tr td:last-child {
   border-right: 0;
 }
 
-/* end of Ian's styling */
+.errors {
+  color: #ff6666;
+  border: solid 2px #ff6666;
+  width: 50%;
+  margin: auto;
+  text-align: center;
+  text-indent: -40px;
+}
 
+.author-name {
+  padding-left: 30px;
+  font-size: 12px;
+}
+/* end of Ian's styling */

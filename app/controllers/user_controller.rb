@@ -5,6 +5,10 @@ get '/user/new' do
   erb :'user/new'
 end
 
+get '/register-ajax' do
+  erb :'partials/_registration_form', layout: false
+end
+
 post '/user' do
   @user = User.create(params[:user])
   if @user.persisted?
@@ -18,6 +22,10 @@ end
 get '/user/login' do
   @user = User.new
   erb :'user/login'
+end
+
+get '/login_ajax' do
+  erb :'partials/_login_form', layout: false
 end
 
 post '/user/login' do
