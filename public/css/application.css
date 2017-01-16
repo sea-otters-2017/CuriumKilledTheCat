@@ -27,10 +27,6 @@ body {
   display: none;
 }
 
-ul {
-  list-style-type: none;
-}
-
 #new-answer-button {
   padding: 1em;
   width: 100%;
@@ -174,6 +170,10 @@ ul {
   margin: auto;
 }
 
+.star-cell {
+  width: 40px;
+}
+
 .best {
   color: gold;
   font-size: 40px;
@@ -211,4 +211,15 @@ table.comment-table tr td:last-child {
   border-right: 0;
 }
 
+.errors {
+  color: #ff6666;
+  border: solid 2px #ff6666;
+  width: 20%;
+  margin: auto;
+}
+
+.author-name {
+  padding-left: 30px;
+  font-size: 12px;
+}
 /* end of Ian's styling */
