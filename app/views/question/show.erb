@@ -11,6 +11,9 @@
           <div class="question-content-wrapper">
             <h2 class="show-question-title"><%= @question.title %></h2>
             <p class="question-content"><%= @question.content %></p>
+            <% author = @question.author %>
+            <div class="author-name">asked by <a href='/user/<%= author.id %>'><%= author.username %></a>  <small>on <%= @question.created_at.to_formatted_s(:long_ordinal) %></small></div>
+
           </div>
         </td>
       </tr>

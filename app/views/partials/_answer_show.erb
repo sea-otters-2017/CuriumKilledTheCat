@@ -7,7 +7,7 @@
       <% answers.each do |answer| %>
 
         <tr>
-          <td>
+          <td class='star-cell'>
             <% if answer.is_best %>
               <% state = '★' %>
             <% else %>
@@ -33,7 +33,7 @@
               <p><strong><%= answer.content %></strong></p>
 
               <% author = answer.author %>
-              <div>answered by <a href='/user/<%= author.id %>'><%= author.username %></a></div>
+              <div><em>answered by <a href='/user/<%= author.id %>'><%= author.username %></a> <small>on <%= answer.created_at.to_formatted_s(:long_ordinal) %></small></em></div>
             </div>
           </td>
         </tr>
