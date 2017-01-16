@@ -22,7 +22,7 @@
 
   <h3 class="answers-count"><%= @question.answers.length %> Answers</h3>
 
-  <%= erb :"partials/_answer_show" %>
+  <%= erb :"partials/_answer_index"%>
 
   <div id="ajax-answer">
     <form id="new-answer-button" action="/questions/<%= @question.id %>/answers/new" method="get">
@@ -33,3 +33,5 @@
 
   </div>
 </div>
+
+

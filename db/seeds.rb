@@ -12,7 +12,7 @@ end
 
 10.times do
   user = User.create(username: Faker::Internet.user_name, password: 'pw')
-  15.times do
+  5.times do
     question = Question.create(title: Faker::Hacker.say_something_smart, content: Faker::ChuckNorris.fact, author_id: user.id)
     5.times do
       answer = Answer.create(author_id: generate_id(user.id), content: Faker::Hipster.paragraph, question_id: question.id)
