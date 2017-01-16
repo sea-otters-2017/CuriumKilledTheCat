@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  $('#answers-list').on('submit', '.wrap-vote-button', function(event) {
+  $('#event-listener').on('submit', '.wrap-vote-button', function(event) {
     event.preventDefault()
     alert('Listening on vote button')
 
@@ -18,6 +18,6 @@ $(document).ready(function() {
         console.log(dataTarget)
         $(dataTarget).html(response)
       }
-    })
+    })    
   })
 });
