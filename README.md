@@ -1,5 +1,5 @@
-# CuriumKilledTheCat
-CURIUM
+# Pile Excess
+TEAM CURIUM
 allyse, austin, katherine, ian, warner
 Users can post questions. Other users can answer them.
 Users can comment on both questions and answers. Like StackOverflow, the comments should just be displayed in a flat list.
