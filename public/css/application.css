@@ -28,20 +28,58 @@ body {
 }
 
 .popup-login-form, .popup-registration-form {
+  z-index: 50004;
   position: fixed;
   background-color: #2d4160;
-  top: 30%;
-  left: 30%;
+  top: 20vh;
+  left: 35vw;
   width: 30%;
   padding: 20px;
   color: white;
   border-radius: 5px;
-  box-shadow: 0px 0px 30px 5px gold;
+  box-shadow: 0 0 2px #273954;
 }
 
-.login-button, .login-button:hover, .login-button:link, .login-button:active, .cancel-button, .cancel-button:hover, .cancel-button:link, .cancel-button:active {
+.popup-header {
+  text-align: center;
+  margin-top: 0px;
+  margin-bottom: 20px;
+}
+
+.login-button, .login-button:hover, .login-button:link, .login-button:active {
   background-color: #6d8fc6;
   border-color: gray;
+}
+
+.cancel-button, .cancel-button:hover, .cancel-button:link, .cancel-button:active {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.form-buttons {
+  margin: 0 auto;
+}
+
+.side-margins {
+  margin: auto 0;
+}
+
+.blackout {
+  z-index: 50003;
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  background: rgba(0, 0,0, 0);
+  transition: background .1s ease;
+}
+
+.responses {
+  padding: 15px;
+}
+
+.fade-in-blackout {
+  background: rgba(0, 0,0, 0.6);
 }
 
 

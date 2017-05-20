@@ -90,33 +90,4 @@ $(document).ready(function() {
         alert('comment can\'t be left blank')
       })
     });
-
-    $('.login-list-item').on('click', function(event){
-      event.preventDefault();
-      $.ajax({
-        type: 'GET',
-        url: '/login_ajax'
-      }).done(function(response){
-        $('body').append(response);
-      })
-    })
-
-    $('body').on('click', '#new_user_cancel', function(event) {
-      event.preventDefault();
-      $('.popup-login-form').remove();
-      $('.popup-registration-form').remove();
-    });
-
-    $('.register-list-item').on('click', function(event) {
-      event.preventDefault();
-      $.ajax({
-        type: 'GET',
-        url: '/register-ajax'
-      }).done(function(response) {
-        $('body').append(response);
-      });
-    })
-
-
-
 });

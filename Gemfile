@@ -21,12 +21,16 @@ gem 'rake'
 
 gem 'shotgun', '~>0.9.1'
 
+#pagination gem
+gem 'kaminari-activerecord'
+gem 'kaminari-sinatra'
+
 group :test do
   gem 'shoulda-matchers'
   gem 'rack-test'
   gem 'rspec', '~>3.0'
   gem 'capybara'
-  gem 'rspec-html-matchers'
+
 end
 
 group :test, :development do
