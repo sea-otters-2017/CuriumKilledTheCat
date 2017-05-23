@@ -22,8 +22,7 @@ gem 'rake'
 gem 'shotgun', '~>0.9.1'
 
 #pagination gem
-gem 'kaminari-activerecord'
-gem 'kaminari-sinatra'
+gem 'will_paginate', '~> 3.1.1'
 
 group :test do
   gem 'shoulda-matchers'

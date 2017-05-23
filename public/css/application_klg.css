@@ -10,7 +10,7 @@
 
 .show-question-title {
   display: inline-block;
-  width: 850px;
+  max-width: 850px;
   margin-left: 15px;
 }
 

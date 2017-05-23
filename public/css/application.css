@@ -2,6 +2,10 @@
   background-color: white;
 }
 
+.well h1 {
+  padding-left: 15px;
+}
+
 #myFooter {
   background: #222222;
   color: #eee;
@@ -14,26 +18,45 @@
   padding-left: 70px;
 }
 
+@media(max-width: 768px){
+  .navbar-brand {padding-left: 20px;}
+  .nav-menu {padding-right:10px;}
+}
+
 .main {
   min-height: 555px;
-  min-width: 400px;
+  min-width: 320px;
 }
 
 body {
-  min-width: 400px;
+  min-width: 320px;
 }
 
 .hidden {
   display: none;
 }
 
+@media(max-width: 500px){
+  .previous_page, .next_page {
+    height: 0;
+    width: 0;
+    visibility: hidden;
+    display:none;
+  }
+}
+
 .popup-login-form, .popup-registration-form {
   z-index: 50004;
   position: fixed;
   background-color: #2d4160;
-  top: 20vh;
-  left: 35vw;
-  width: 30%;
+  width:30%;
+  left:0; right:0;
+  top:20vh;
+  margin:auto;
+  max-width:100%;
+  max-height:100%;
+  overflow:auto;
+  min-width: 320px;
   padding: 20px;
   color: white;
   border-radius: 5px;
@@ -52,9 +75,19 @@ body {
 }
 
 .cancel-button, .cancel-button:hover, .cancel-button:link, .cancel-button:active {
+  font-size: 18px;
   position: absolute;
-  top: 0;
-  right: 0;
+  top: 4px;
+  right: 4px;
+}
+
+.cancel-button:hover {
+  color: gray;
+}
+
+.cancel-button {
+  border:none;
+  background: none;
 }
 
 .form-buttons {
@@ -330,4 +363,35 @@ table.comment-table tr td:last-child {
   padding-left: 30px;
   font-size: 12px;
 }
+
+.apple_pagination {
+  background: #f1f1f1;
+  border: 1px solid #e5e5e5;
+  text-align: center;
+  cursor: default;
+}
+.apple_pagination a, .apple_pagination span {
+  padding: 0.2em 0.3em;
+}
+.apple_pagination .disabled {
+  color: #aaaaaa;
+}
+.apple_pagination .current {
+  font-style: normal;
+  font-weight: bold;
+  background-color: #bebebe;
+  display: inline-block;
+  width: 1.4em;
+  height: 1.4em;
+  line-height: 1.5;
+  -moz-border-radius: 1em;
+  -webkit-border-radius: 1em;
+  border-radius: 1em;
+  text-shadow: rgba(255, 255, 255, 0.8) 1px 1px 1px;
+}
+.apple_pagination a {
+  text-decoration: none;
+  color: black; }
+.apple_pagination a:hover, .apple_pagination a:focus {
+  text-decoration: underline; }
 /* end of Ian's styling */
