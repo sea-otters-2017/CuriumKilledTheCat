@@ -1,6 +1,8 @@
 <div class="comment-form">
   <form id="new-comment-form" action='/answers/<%= @answer.id %>/new' method='post'>
-    <textarea name="content" rows="5" cols="50" placeholder="Comment here"></textarea>
-    <button type="submit">Submit</button>
+    <textarea class='comment-content' name="content" rows="5" cols="50" placeholder="Comment here"></textarea>
+    <button type="submit" class='submit-comment btn btn-xs btn-warning'>Submit</button>
+    <button class='cancel cancel-comment btn btn-xs btn-warning'>Cancel</button>
   </form>
 </div>
+
