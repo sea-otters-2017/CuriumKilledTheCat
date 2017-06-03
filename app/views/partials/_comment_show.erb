@@ -10,7 +10,7 @@
         <span class="comment-wrapper">
           <% author = comment.author %>
           <%= comment.content %>
-          <em><a href='/user/<%= author.try(:id) %>'><%= author.try(:username) %> </a> <small>on <%= answer.created_at.to_formatted_s(:long_ordinal) %></small></em>
+          <em><a href='/user/<%= author.try(:id) %>'><%= author.try(:username) %> </a> <small>on <%= comment.created_at.to_formatted_s(:long_ordinal) %></small></em>
         </span>
       </td>
     </tr>
