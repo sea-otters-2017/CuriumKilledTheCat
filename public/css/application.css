@@ -115,10 +115,19 @@ body {
   background: rgba(0, 0,0, 0.6);
 }
 
+.comment-form {
+  padding: 10px;
+}
 
+.comment-content {
+  margin: 10px 0px;
+}
 
-.answer-content {
+.answer-content, .comment-content {
   display: block;
+  width: 100%;
+  padding: 5px 8px;
+  margin-right: -10px;
 }
 ul {
   list-style-type: none;
@@ -138,19 +147,27 @@ ul {
   text-align: center;
   padding-top: 20px;
 }
-.cancel, .submit-answer {
+
+.cancel-answer, .submit-answer {
   padding: 5px 20px;
   margin: 0 10px;
   background: #466699;
-  border-color: gray;
+  border-color: #466699;
+  border: 0;
   font-size: 20px;
 }
 
+.cancel-comment, .submit-comment {
+  padding: 5px 20px;
+  margin: 0 10px;
+  background: #466699;
+  border: 0;
+  font-size: 14px;
+}
 
 #new-answer-button {
   padding: 1em;
   width: 100%;
-  /*max-width: 60%;*/
 }
 
 #new-comment-form-button {
@@ -172,8 +189,6 @@ ul {
 #comment-downvote {
   padding-top: 5px;
 }
-
-/* Ian's styling */
 
 .comments-list {
   list-style: none;
@@ -197,13 +212,15 @@ ul {
   margin: 30px;
 }
 
-#new-comment-button {
+.new-comment-button {
   background-color: #43b5f2; /*light blue*/
+  border-color: #43b5f2;
   margin: 15px 0;
 }
 
 .answer-button {
   background-color: #0099ff; /*twittery blue*/
+  border-color: #0099ff;
   padding: 20px;
 }
 
@@ -300,7 +317,6 @@ ul {
   white-space: nowrap;
   text-overflow: ellipsis;*/
 
-
   word-wrap:break-word
 }
 
@@ -316,7 +332,6 @@ ul {
 .best {
   color: gold;
   font-size: 40px;
-
   padding-right: 10px;
 }
 
@@ -391,7 +406,8 @@ table.comment-table tr td:last-child {
 }
 .apple_pagination a {
   text-decoration: none;
-  color: black; }
+  color: black;
+}
 .apple_pagination a:hover, .apple_pagination a:focus {
-  text-decoration: underline; }
-/* end of Ian's styling */
+  text-decoration: underline;
+}
