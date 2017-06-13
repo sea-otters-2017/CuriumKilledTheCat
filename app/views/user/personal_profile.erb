@@ -1,78 +1,77 @@
+<% score = @user.vote_total %>
+<% status = user_status(score) %>
+
 <div class="container">
-  <h1>welcome, <%= @user.username %></h1>
+  <h1>Welcome, <%= @user.username %></h1>
 
   <div class="row" id="moreInfo">
-  	<div class="col-sm-12">
-  		<h3>Neat Tabbable Content</h3>
-  		<div class="tabbable">
-  			<ul class="nav nav-tabs">
-  				<li class="active"><a href="#tab1" data-toggle="tab">Stats</a></li>
-          <li><a href="#tab2" data-toggle="tab">Submitted Questions</a></li>
-  				<li><a href="#tab3" data-toggle="tab">About Me</a></li>
-  			</ul>
-  			<div class="tab-content">
-  				<div class="tab-pane active" id="tab1">
-  					<h4><span class="glyphicon glyphicon-pencil"></span> Gimme some a dat <small>This text is small</small></h4>
+    <div class="col-sm-12">
+      <div class="tabbable">
+        <ul class="nav nav-tabs">
+          <li><a href="#tab1" data-toggle="tab">Stats</a></li>
+          <li class="active"><a href="#tab2" data-toggle="tab">Submitted Questions</a></li>
+          <li><a href="#tab3" data-toggle="tab">About Me</a></li>
+        </ul>
+        <div class="tab-content">
+          <div class="tab-pane" id="tab1">
+            <h4> Your status is <i><%= status %></i></h4>
 
-            <div style='margin: 50px'> You have <%= @user.vote_total %> upvotes
-              <p>this user has submitted the best answer on the following questions</p>
-              <% @user.best_answers.each do |answer| %>
-                <% question = answer.question %>
+            <div style='margin: 50px'> You have a Pile Excess Score of <%= score %>
+              <p>You have submitted the best answer <%= @user.best_answers.count %> time(s)</p>
+              <% if @user.best_answers.count > 0 %>
+                <p>You have submitted the best answer on the following questions</p>
+                <% @user.best_answers.each do |answer| %>
+                  <% question = answer.question %>
 
-                <p> <a href='/questions/<%=question.id%>'><%= answer.question.title %></a> </p>
+                  <p> <a href='/questions/<%=question.id%>'><%= answer.question.title %></a> </p>
+                <% end %>
               <% end %>
-              <p>this user has submitted the best answer <%= @user.best_answers.count %> time(s)</p>
             </div>
-<!--   					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-  					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-  					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-  					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-  					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-  					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-  					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-  					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-  					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-  					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-  					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-  					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p> -->
 
-  				</div><!-- end tab-pane -->
+          </div><!-- end tab-pane -->
 
-  				<div class="tab-pane" id="tab2">
-  					<h4>Submitted Questions</h4>
+          <div class="tab-pane active" id="tab2">
+            <h4>Submitted Questions</h4>
 
             <% questions = @user.questions %>
             <% if questions.empty? %>
               <h2>You have not submitted any questions</h2>
             <% else %>
-    					<% questions.each do |question| %>
-                <h2 class="index-question-title"><a href="/questions/<%= question.id %>"><%= question.title %></a></h2>
+              <% questions.each do |question| %>
+              <div>
+                <h2 class="index-question-title inline-block"><a href="/questions/<%= question.id %>"><%= h question.title %></a></h2>
+                <!-- action="/questions/<%= question.id %>" -->
+                <form  method='post' class='inline-block pull-right vertical-center'>
+                  <input type="hidden" name="_method" value="DELETE" />
+                  <button type='submit' class='no-btn red' data-toggle="confirmation"><span class="glyphicon glyphicon-remove"></span></button>
+                </form>
+                </div>
               <% end %>
             <% end %>
 
-  				</div><!-- end tab-pane -->
+          </div><!-- end tab-pane -->
 
           <div class="tab-pane" id="tab3">
-  					<h4><%#= image_tag @user.gravatar_url %><small> Do I even want this third tab of stuff</small></h4>
+            <h4>This is what <%= @user.username %> is all about</h4>
 
-  					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-  					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-  					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-  					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-  					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-  					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 
-  					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-  					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-  					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-  					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-  					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-  					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 
-  				</div><!-- end tab-pane -->
+          </div><!-- end tab-pane -->
 
-  			</div><!-- end tab-content -->
-  		</div><!-- end tabbable -->
-  	</div><!-- end col-sm-6 -->
+        </div><!-- end tab-content -->
+      </div><!-- end tabbable -->
+    </div><!-- end col-sm-6 -->
   </div>
 </div>
