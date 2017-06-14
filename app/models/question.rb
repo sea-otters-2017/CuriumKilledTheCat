@@ -1,4 +1,5 @@
 class Question < ActiveRecord::Base
+  self.per_page = 10
   include Votable
 
   belongs_to :author, class_name: 'User'

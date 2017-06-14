@@ -5,7 +5,11 @@ get '/questions/:question_id/answers/:answer_id/new' do
   unless @question && @answer
     return erb :'404'
   end
-  erb :'comment/new'
+  if request.xhr?
+    erb :'partials/_new_comment', layout: false
+  else
+    erb :'comment/new'
+  end
 end
 
 post '/answers/:id/new' do
@@ -15,7 +19,6 @@ post '/answers/:id/new' do
   @question = @answer.question
 
   if @comment.persisted?
-    p 'it perrrrrsssssisisisisisists'
     if request.xhr?
       erb :'/partials/_ajax_comment', layout: false
     else
