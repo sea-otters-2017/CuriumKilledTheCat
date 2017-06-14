@@ -15,7 +15,6 @@ post '/user/login' do
   else
     @user = User.new
     @user.errors.add(:username, 'and Password do not match')
-    p @user.errors
     erb :'/user/login'
   end
 end
