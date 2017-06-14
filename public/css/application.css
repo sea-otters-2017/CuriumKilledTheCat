@@ -273,17 +273,21 @@ ul {
   height: 0;
   padding: 0;
 
-  border-left: 5px solid transparent;
-  border-right: 5px solid transparent;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
   background: transparent;
+}
+
+.vote-count {
+  cursor: default;
 }
 
 #comment-vote-count {
   font-size: 10px;
-  margin-top: -15px;
-  margin-left: -2px;
+  margin-top: -12px;
+  margin-left: -6px;
   height: 10px;
-  padding-left: 4.5px;
+  text-align: center;
 }
 
 .wrap-comment-vote-button {
