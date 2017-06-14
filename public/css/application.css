@@ -1,3 +1,5 @@
+
+
 .well {
   background-color: white;
 }
@@ -368,12 +370,22 @@ table.comment-table tr td:last-child {
 }
 
 .errors {
-  color: #ff6666;
-  border: solid 2px #ff6666;
+  background-color: #ff6666;
+  border: solid 1px #ff0000;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 18px;
+  font-kerning: 1.5px;
   width: 50%;
-  margin: auto;
+  margin: 10px auto;
   text-align: center;
   text-indent: -40px;
+}
+
+@media(max-width: 768px){
+  .errors{
+    width: 100%;
+  }
 }
 
 .author-name {

@@ -2,7 +2,8 @@
 <% unless errors.empty? %>
   <ul class="errors">
   <% errors.each do |error| %>
-    <li><%= error.join(' ').capitalize %></li>
+
+    <li class='input<%= error.first.to_s.capitalize %>'><%= error.join(' ').capitalize %></li>
   <% end %>
   </ul>
 <% end %>

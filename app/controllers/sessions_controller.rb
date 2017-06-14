@@ -13,6 +13,8 @@ post '/user/login' do
     session_login(@user.id)
     redirect '/'
   else
+    @user = User.new
+    @user.errors.add(:username, 'and Password do not match')
     erb :'/user/login'
   end
 end
