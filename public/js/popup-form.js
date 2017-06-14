@@ -1,6 +1,6 @@
 $(document).ready(function(){
   $('.login-list-item').click(handleListClick)
-  $('.register-list-item').on('click', handleListClick)
+  $('.register-list-item').click(handleListClick)
 })
 
 function clearPopUp(event){

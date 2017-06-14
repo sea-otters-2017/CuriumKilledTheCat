@@ -42,7 +42,7 @@
                 <h2 class="index-question-title inline-block"><a href="/questions/<%= question.id %>"><%= h question.title %></a></h2>
                 <form  method='post' class='inline-block pull-right vertical-center' action="/questions/<%= question.id %>">
                   <input type="hidden" name="_method" value="DELETE" />
-                  <button type='submit' class='no-btn red' data-toggle="confirmation"><span class="glyphicon glyphicon-remove"></span></button>
+                  <button type='submit' class='no-btn red' data-toggle="confirmation" data-placement='left'><span class="glyphicon glyphicon-remove"></span></button>
                 </form>
                 </div>
               <% end %>

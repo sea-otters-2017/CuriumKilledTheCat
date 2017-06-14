@@ -1,8 +1,6 @@
 <div id="login-form">
   <div>LOGIN</div>
-  <% unless @user %>
-    <div>username and password do not match</div>
-  <% end %>
+  <%= erb :'partials/_errors', locals: { object: @user } %>
 
   <form class="form-horizontal" action='/user/login' method='POST'>
   	<div class="form-group">
