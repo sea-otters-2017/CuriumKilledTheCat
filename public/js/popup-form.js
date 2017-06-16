@@ -23,7 +23,7 @@ function handleListClick(event){
       type: 'GET',
       url: url,
     }).done(function(response){
-      $('body').prepend(response);
+      $('body').append(response);
       $('.blackout').click(clearPopUp);
       $('.cancel-button').click(clearPopUp);
     })

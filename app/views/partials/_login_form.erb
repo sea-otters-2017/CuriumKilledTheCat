@@ -1,8 +1,8 @@
   <div class="popup-login-form popup-form">
     <h2 class='popup-header'>Log In</h2>
     <button class="cancel-button" id="new_user_cancel">&#9447;</button>
-
-    <form class="form-horizontal" action='/user/login' method='POST'>
+    <div id='popup-flash'></div>
+    <form id='login-form' class="form-horizontal" action='/login' method='POST'>
       <div class='responses'>
         <div class="form-group">
           <input class="form-control" id="login_username" name="username" type="text" placeholder="Username">

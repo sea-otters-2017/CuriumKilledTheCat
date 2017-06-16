@@ -1,4 +1,33 @@
+#main-wrapper {
+  box-sizing: border-box;
+  min-height: 100%;
+  padding: 200px 0 113px;
+  position: relative;
+}
 
+@media(max-width: 991px) {
+  #main-wrapper {
+    padding-bottom: 128px;
+  }
+}
+
+@media(max-width: 767px) {
+  #main-wrapper {
+    padding-bottom: 223px;
+  }
+}
+
+@media(max-width: 512px) {
+  #main-wrapper {
+    padding-bottom: 238px;
+  }
+}
+
+@media(max-width: 370px) {
+  #main-wrapper {
+    padding-bottom: 253px;
+  }
+}
 
 .well {
   background-color: white;
@@ -14,6 +43,9 @@
   font-size: 11px;
   padding: 20px;
   margin-top: 10px;
+  bottom: 0;
+  position: absolute;
+  width: 100%;
 }
 
 .navbar-brand {
@@ -25,14 +57,17 @@
   .nav-menu {padding-right:10px;}
 }
 
-.main {
-  min-height: 555px;
-  height: 100%;
-  min-width: 320px;
+#navbar-static-top {
+  position: absolute;
+  top: 0;
+  height: 200px;
+  width: 100%;
 }
 
-body {
+.main {
+  min-height: 555px;
   min-width: 320px;
+  padding-bottom: 10px;
 }
 
 .hidden {
@@ -104,8 +139,10 @@ body {
 .blackout {
   z-index: 50003;
   position: absolute;
-  height: 100vh;
-  width: 100vw;
+/*  min-height: 100vh;
+  min-width: 100vw;*/
+  height: 100%;
+  width: 100%;
   background: rgba(0, 0,0, 0);
   transition: background .1s ease;
 }
@@ -379,11 +416,13 @@ table.comment-table tr td:last-child {
   border-radius: 5px;
   padding: 10px;
   font-size: 18px;
-  font-kerning: 1.5px;
   width: 50%;
   margin: 10px auto;
   text-align: center;
-  text-indent: -40px;
+}
+
+#popup-flash .errors {
+  width: 100%;
 }
 
 @media(max-width: 768px){

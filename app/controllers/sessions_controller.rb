@@ -1,4 +1,4 @@
-get '/user/login' do
+get '/login' do
   @user = User.new
   if request.xhr?
     erb :'partials/_login_form', layout: false
@@ -7,19 +7,28 @@ get '/user/login' do
   end
 end
 
-post '/user/login' do
+post '/login' do
   @user = User.find_by(username: params[:username]).try(:authenticate, params[:password])
   if @user
     session_login(@user.id)
-    redirect '/'
+    if request.xhr?
+      status 200
+    else
+      redirect '/'
+    end
   else
     @user = User.new
     @user.errors.add(:username, 'and Password do not match')
-    erb :'/user/login'
+    if request.xhr?
+      status 401
+      erb :'/partials/_errors', locals: {:object => @user}, layout: false
+    else
+      erb :'/user/login'
+    end
   end
 end
 
-get '/user/logout' do
+get '/logout' do
   session[:user_id] = nil
   redirect '/'
 end

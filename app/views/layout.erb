@@ -18,6 +18,7 @@
 <script src="https://netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
   <script src='/js/bootstrap-confirmation.js'></script>
   <script src="/js/new-response.js"></script>
+  <script src="/js/login.js"></script>
   <script src="/js/popup-form.js"></script>
   <script src="/js/vote.js"></script>
   <script src="/js/error-messages.js"></script>
@@ -26,17 +27,19 @@
   <link rel="icon" href="/garbage.ico">
 </head>
 <body>
-  <div class="navbar">
-    <%= erb :"partials/_navbar"%>
-    <div class="container">
-      <div class="well">
-        <h1>Pile Excess</h1>
+  <div id='main-wrapper'>
+    <div class="navbar" id='navbar-static-top'>
+      <%= erb :"partials/_navbar"%>
+      <div class="container">
+        <div class="well">
+          <h1>Pile Excess</h1>
+        </div>
       </div>
     </div>
+    <div id="event-listener" class="main container">
+      <%= yield %>
+    </div>
+    <%= erb :"partials/_footer"%>
   </div>
-  <div id="event-listener" class="main container">
-    <%= yield %>
-  </div>
-  <%= erb :"partials/_footer"%>
 </body>
 </html>
