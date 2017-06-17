@@ -13,7 +13,7 @@ function handleListClick(event){
     event.preventDefault();
     $('.dropdown').click();
 
-    $('body').prepend('<div class="blackout"></div>');
+    $('#main-wrapper').prepend('<div class="blackout"></div>');
     setTimeout(function(){
       $('.blackout').addClass('fade-in-blackout');
     }, 10)
@@ -23,7 +23,7 @@ function handleListClick(event){
       type: 'GET',
       url: url,
     }).done(function(response){
-      $('body').append(response);
+      $('#main-wrapper').append(response);
       $('.blackout').click(clearPopUp);
       $('.cancel-button').click(clearPopUp);
     })

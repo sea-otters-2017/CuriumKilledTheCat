@@ -139,10 +139,9 @@
 .blackout {
   z-index: 50003;
   position: absolute;
-/*  min-height: 100vh;
-  min-width: 100vw;*/
   height: 100%;
   width: 100%;
+  margin-top: -200px;
   background: rgba(0, 0,0, 0);
   transition: background .1s ease;
 }
@@ -421,6 +420,18 @@ table.comment-table tr td:last-child {
   text-align: center;
 }
 
+.flash {
+  background-color: #7c96b7;
+  border: solid 1px #777f89;
+  color: white;
+  border-radius: 5px;
+  padding: 5px;
+  font-size: 15px;
+  width: 100%;
+  margin: 10px auto;
+  text-align: center;
+}
+
 #popup-flash .errors {
   width: 100%;
 }
@@ -485,4 +496,9 @@ table.comment-table tr td:last-child {
 
 .red {
   color: #d9534f;
+}
+
+.bad-input {
+  border-color: #d9534f;
+  background-color: pink;
 }
