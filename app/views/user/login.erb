@@ -1,8 +1,8 @@
 <div id="login-form">
   <div>LOGIN</div>
   <%= erb :'partials/_errors', locals: { object: @user } %>
-
-  <form class="form-horizontal" action='/user/login' method='POST'>
+  <div id='form-flash'></div>
+  <form class="form-horizontal" action='/login' method='POST'>
   	<div class="form-group">
   		<label class="col-lg-2 control-label" for="login_username">Username</label>
   		<div class="col-lg-10">

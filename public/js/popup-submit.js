@@ -1,17 +1,21 @@
 var noBlank = '<ul class="flash" id="no-blank"><li>Don\'t leave username or password blank.</li></ul>'
 
 $(document).ready(function(){
+  checkPopUp('login')
+  checkPopUp('register')
+})
 
+checkPopUp = function(form) {
   var timeout = null
 
-  $('body').on('submit', '#login-form', function(e){
+  $('body').on('submit', '#popup-' + form + '-form', function(e){
     e.preventDefault();
 
     clearTimeout(timeout)
     $('#popup-flash').html('')
     $this = $(this)
 
-    var errors = checkForm()
+    var errors = checkForm(form)
     if (errors) {
       $('#popup-flash').append(noBlank)
       timeout = setTimeout(function(){$('#no-blank').remove()},2000)
@@ -28,11 +32,11 @@ $(document).ready(function(){
       $('#popup-flash').append(error.responseText)
     })
   })
-})
+}
 
-checkForm = function(){
-  var passwordError = checkInput('#login_password')
-  var usernameError = checkInput('#login_username')
+checkForm = function(form){
+  var passwordError = checkInput('#' + form + '_password')
+  var usernameError = checkInput('#'+ form + '_username')
   return (passwordError || usernameError)
 }
 

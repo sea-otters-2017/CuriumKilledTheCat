@@ -13,9 +13,18 @@ post '/user' do
   @user = User.create(params[:user])
   if @user.persisted?
     session_login(@user.id)
-    redirect '/'
+    if request.xhr?
+      status 200
+    else
+      redirect '/'
+    end
   else
-    erb :'user/new'
+    if request.xhr?
+      status 422
+      erb :'/partials/_errors', locals: {:object => @user}, layout: false
+    else
+      erb :'user/new'
+    end
   end
 end
 

@@ -1,7 +1,8 @@
 <div class="popup-registration-form popup-form">
   <h2 class='popup-header'>Register</h2>
   <button class="cancel-button" id="new_user_cancel">&#9447;</button>
-<form class="form-horizontal" action='/user' method='POST'>
+  <div id='popup-flash'></div>
+<form id='popup-register-form' class="form-horizontal" action='/user' method='POST'>
   <div class='responses'>
   	<div class="form-group">
     	<input class="form-control" id="register_username" name="user[username]" type="text" placeholder="Username" value="<%= @user.try(:username) %>">

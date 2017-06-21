@@ -8,6 +8,15 @@ $(document).ready(function() {
     var parent = $(event.target).closest('.wrap-vote-button')
     var dataTarget = $(parent).find('.vote-count')
 
+    if (data.vote_count == '1') {
+      $(event.target).find('.vote-button').toggleClass('upvote')
+      $(parent).find('.arrow-down').removeClass('downvote')
+    } else {
+      $(event.target).find('.vote-button').toggleClass('downvote')
+      $(parent).find('.arrow-up').removeClass('upvote')
+    }
+
+
     $.ajax({
       type: 'POST',
       url: url,

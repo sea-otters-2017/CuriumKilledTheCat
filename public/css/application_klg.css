@@ -33,10 +33,32 @@
   background: transparent;
 }
 
-#vote-count {
+.small-button {
+  border-width: 7px;
+}
+
+.vote-count {
   height: 25px;
-  padding-left: 6px;
   margin-bottom: 5px;
+  text-align: center;
+  cursor: default;
+}
+
+.comment-vote-count {
+  font-size: 10px;
+  margin-top: -12px;
+  margin-left: -6px;
+  margin-bottom: 0px;
+  height: 10px;
+  text-align: center;
+}
+
+.upvote {
+  border-bottom-color: #76c463;
+}
+
+.downvote {
+  border-top-color: #c55050;
 }
 
 .wrap-vote-button {

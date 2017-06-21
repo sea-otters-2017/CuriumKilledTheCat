@@ -204,11 +204,6 @@ ul {
   font-size: 14px;
 }
 
-#new-answer-button {
-  padding: 1em;
-  width: 100%;
-}
-
 #new-comment-form-button {
   padding: .8em;
 }
@@ -249,7 +244,8 @@ ul {
 
 #new-answer-button {
   text-align: center;
-  margin: 30px;
+  margin: 30px auto;
+  width: 100%;
 }
 
 .new-comment-button {
@@ -314,18 +310,6 @@ ul {
   background: transparent;
 }
 
-.vote-count {
-  cursor: default;
-}
-
-#comment-vote-count {
-  font-size: 10px;
-  margin-top: -12px;
-  margin-left: -6px;
-  height: 10px;
-  text-align: center;
-}
-
 .wrap-comment-vote-button {
   margin-bottom: -10px;
 }
@@ -333,7 +317,6 @@ ul {
 .comment-table {
   width: 100%;
   min-height: 20px;
-
 }
 
 #login_password {

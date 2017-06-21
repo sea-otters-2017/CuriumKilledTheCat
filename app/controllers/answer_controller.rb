@@ -4,7 +4,12 @@ require 'sinatra/json'
 # goes to the form page for answering a question
 get '/questions/:id/answers/new' do
   unless session_user
-    return erb :'404'
+    if request.xhr?
+      status 401
+      return
+    else
+      return erb :'404'
+    end
   end
 
   @question = Question.find_by_id(params[:id])
