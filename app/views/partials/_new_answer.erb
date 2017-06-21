@@ -1,9 +1,7 @@
-<div class="answer-form">
-  <form id="new-answer-form" method="post" action="/questions/<%= @question.id %>/answers">
-    <textarea class="answer-content" name="content" rows="10" cols="50" placeholder="Answer here"></textarea>
-    <div class="answer-buttons">
-      <button id="<%= @question.id %>" class='submit-answer btn btn-xs btn-warning' type="submit">Submit</button>
-      <button class='cancel btn btn-xs btn-warning'>Cancel</button>
-    </div>
-  </form>
-</div>
+<form id="new-answer-form" class='respones-form' method="post" action="/questions/<%= @question.id %>/answers">
+  <textarea class="answer-content" name="content" rows="10" cols="50" placeholder="Answer here"></textarea>
+  <div class="answer-buttons">
+    <button id="<%= @question.id %>" class='submit-answer btn btn-xs btn-warning' type="submit">Submit</button>
+    <button class='cancel cancel-answer btn btn-xs btn-warning'>Cancel</button>
+  </div>
+</form>

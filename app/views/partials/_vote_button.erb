@@ -1,13 +1,13 @@
 <div class="wrap-vote-button">
   <form id="question-upvote" action="/questions/<%= post.id %>/votes" method="post">
     <input type="hidden" name="vote_count" value="1" />
-    <input class="vote-button arrow-up" type="submit" value="Vote Up">
+    <input class="vote-button arrow-up <%= upvote(QuestionVote, 'question', post.id) %>" type="submit" value="Vote Up">
   </form>
 
-  <div id="vote-count" class="vote-count"><%=post.vote_count%></div>
+  <div class="vote-count"><%=post.vote_count%></div>
 
   <form id="question-downvote" action="/questions/<%= post.id %>/votes" method="post">
     <input type="hidden" name="vote_count" value="-1" />
-    <input class="vote-button arrow-down" type="submit" value="Vote Down">
+    <input class="vote-button arrow-down <%= downvote(QuestionVote, 'question', post.id) %>" type="submit" value="Vote Down">
   </form>
 </div>
