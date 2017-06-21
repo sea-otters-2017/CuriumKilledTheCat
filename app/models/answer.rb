@@ -9,6 +9,6 @@ class Answer < ActiveRecord::Base
   validates :author_id, :content, :question_id, presence: true
 
   def is_best
-    self.question.best_answer_id == self.id
+    self.question.try(:best_answer_id) == self.id
   end
 end

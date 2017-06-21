@@ -1,10 +1,8 @@
 <div id="login-form">
   <div>LOGIN</div>
-  <% unless @user %>
-    <div>username and password do not match</div>
-  <% end %>
-
-  <form class="form-horizontal" action='/user/login' method='POST'>
+  <%= erb :'partials/_errors', locals: { object: @user } %>
+  <div id='form-flash'></div>
+  <form class="form-horizontal" action='/login' method='POST'>
   	<div class="form-group">
   		<label class="col-lg-2 control-label" for="login_username">Username</label>
   		<div class="col-lg-10">

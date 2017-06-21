@@ -1,3 +1,4 @@
+#new
 get '/questions/new' do
   unless User.find_by_id(session_user_id).try(:id)
     return erb :'404'
@@ -7,6 +8,7 @@ get '/questions/new' do
   erb :'/question/new'
 end
 
+#create
 post '/questions' do
   params[:question][:author_id] = User.find_by_id(session_user_id).id
   unless params[:question][:author_id]
@@ -20,6 +22,7 @@ post '/questions' do
   end
 end
 
+#show
 get '/questions/:id' do
   @question = Question.find_by_id(params[:id])
 
@@ -30,6 +33,19 @@ get '/questions/:id' do
   end
 end
 
+#delete
+delete '/questions/:id' do
+  question = Question.find_by_id(params[:id])
+
+  unless question && session_user == question.author
+    return erb :'404'
+  end
+
+  question.destroy
+  redirect "/user/#{session_user_id}"
+end
+
+#create best
 get '/best/:question_id/:answer_id' do
   question = Question.find_by_id(params[:question_id])
 

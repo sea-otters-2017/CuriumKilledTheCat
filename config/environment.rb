@@ -18,6 +18,9 @@ require 'logger'
 require 'sinatra'
 require "sinatra/reloader" if development?
 
+require 'will_paginate'
+require 'will_paginate/active_record'
+
 require 'erb'
 
 

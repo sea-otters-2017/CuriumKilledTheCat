@@ -11,11 +11,13 @@
 	<div class="form-group">
 		<label class="col-lg-2 control-label" for="inputQuestion">Content</label>
 		<div class="col-lg-10">
-		  <input class="form-control" id="inputQuestion" type='text' name='question[content]' placeholder="Content" value="<%= @question.try(:content) %>">
+		  <textarea class="form-control" id="inputQuestion" type='text' name='question[content]' value="">
+        <%= @question.try(:content) %>
+      </textarea>
 		  <button class="btn btn-success" type='submit'>Submit Question</button>
 		</div>
 	</div>
 </form>
-  
+
 
 

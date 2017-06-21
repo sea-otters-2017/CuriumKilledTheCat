@@ -10,7 +10,7 @@
         <span class="comment-wrapper">
           <% author = comment.author %>
           <%= comment.content %>
-          <em><a href='/user/<%= author.try(:id) %>'><%= author.try(:username) %> </a> <small>on <%= answer.created_at.to_formatted_s(:long_ordinal) %></small></em>
+          <em><a href='/user/<%= author.try(:id) %>'><%= author.try(:username) %> </a> <small>on <%= comment.created_at.to_formatted_s(:long_ordinal) %></small></em>
         </span>
       </td>
     </tr>
@@ -19,6 +19,6 @@
 
 <div id="<%= answer.try(:id) %>" class='new-comment-wrapper'>
   <form class="new-comment-form-button" action="/questions/<%= @question.try(:id) %>/answers/<%= answer.try(:id) %>/new" method="get">
-    <button id="new-comment-button" type="submit" class="btn btn-xs btn-warning">Comment On This Answer</button>
+    <button id="new-comment-button" type="submit" class="btn btn-xs btn-warning new-comment-button">Comment On This Answer</button>
   </form>
 </div>

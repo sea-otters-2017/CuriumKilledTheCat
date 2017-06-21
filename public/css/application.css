@@ -1,5 +1,40 @@
+#main-wrapper {
+  box-sizing: border-box;
+  min-height: 100%;
+  padding: 200px 0 113px;
+  position: relative;
+}
+
+@media(max-width: 991px) {
+  #main-wrapper {
+    padding-bottom: 128px;
+  }
+}
+
+@media(max-width: 767px) {
+  #main-wrapper {
+    padding-bottom: 223px;
+  }
+}
+
+@media(max-width: 512px) {
+  #main-wrapper {
+    padding-bottom: 238px;
+  }
+}
+
+@media(max-width: 370px) {
+  #main-wrapper {
+    padding-bottom: 253px;
+  }
+}
+
 .well {
   background-color: white;
+}
+
+.well h1 {
+  padding-left: 15px;
 }
 
 #myFooter {
@@ -8,46 +43,130 @@
   font-size: 11px;
   padding: 20px;
   margin-top: 10px;
+  bottom: 0;
+  position: absolute;
+  width: 100%;
 }
 
 .navbar-brand {
   padding-left: 70px;
 }
 
-.main {
-  min-height: 555px;
-  min-width: 400px;
+@media(max-width: 768px){
+  .navbar-brand {padding-left: 20px;}
+  .nav-menu {padding-right:10px;}
 }
 
-body {
-  min-width: 400px;
+#navbar-static-top {
+  position: absolute;
+  top: 0;
+  height: 200px;
+  width: 100%;
+}
+
+.main {
+  min-height: 555px;
+  min-width: 320px;
+  padding-bottom: 10px;
 }
 
 .hidden {
   display: none;
 }
 
+@media(max-width: 500px){
+  .previous_page, .next_page {
+    height: 0;
+    width: 0;
+    visibility: hidden;
+    display:none;
+  }
+}
+
 .popup-login-form, .popup-registration-form {
+  z-index: 50004;
   position: fixed;
   background-color: #2d4160;
-  top: 30%;
-  left: 30%;
-  width: 30%;
+  width:30%;
+  left:0; right:0;
+  top:20vh;
+  margin:auto;
+  max-width:100%;
+  max-height:100%;
+  overflow:auto;
+  min-width: 320px;
   padding: 20px;
   color: white;
   border-radius: 5px;
-  box-shadow: 0px 0px 30px 5px gold;
+  box-shadow: 0 0 2px #273954;
 }
 
-.login-button, .login-button:hover, .login-button:link, .login-button:active, .cancel-button, .cancel-button:hover, .cancel-button:link, .cancel-button:active {
+.popup-header {
+  text-align: center;
+  margin-top: 0px;
+  margin-bottom: 20px;
+}
+
+.login-button, .login-button:hover, .login-button:link, .login-button:active {
   background-color: #6d8fc6;
   border-color: gray;
 }
 
+.cancel-button, .cancel-button:hover, .cancel-button:link, .cancel-button:active {
+  font-size: 18px;
+  position: absolute;
+  top: 4px;
+  right: 4px;
+}
 
+.cancel-button:hover {
+  color: gray;
+}
 
-.answer-content {
+.cancel-button {
+  border:none;
+  background: none;
+}
+
+.form-buttons {
+  margin: 0 auto;
+}
+
+.side-margins {
+  margin: auto 0;
+}
+
+.blackout {
+  z-index: 50003;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  margin-top: -200px;
+  background: rgba(0, 0,0, 0);
+  transition: background .1s ease;
+}
+
+.responses {
+  padding: 15px;
+}
+
+.fade-in-blackout {
+  background: rgba(0, 0,0, 0.6);
+}
+
+.comment-form {
+  padding: 10px;
+}
+
+.comment-content {
+  margin: 10px 0px;
+}
+
+.answer-content, .comment-content {
   display: block;
+  width: 100%;
+  padding: 5px 8px;
+  margin-right: -10px;
 }
 ul {
   list-style-type: none;
@@ -67,19 +186,22 @@ ul {
   text-align: center;
   padding-top: 20px;
 }
-.cancel, .submit-answer {
+
+.cancel-answer, .submit-answer {
   padding: 5px 20px;
   margin: 0 10px;
   background: #466699;
-  border-color: gray;
+  border-color: #466699;
+  border: 0;
   font-size: 20px;
 }
 
-
-#new-answer-button {
-  padding: 1em;
-  width: 100%;
-  /*max-width: 60%;*/
+.cancel-comment, .submit-comment {
+  padding: 5px 20px;
+  margin: 0 10px;
+  background: #466699;
+  border: 0;
+  font-size: 14px;
 }
 
 #new-comment-form-button {
@@ -88,6 +210,7 @@ ul {
 
 #inputQuestion {
   margin-bottom: 15px;
+  min-height: 300px;
 }
 
 #question-td {
@@ -101,8 +224,6 @@ ul {
 #comment-downvote {
   padding-top: 5px;
 }
-
-/* Ian's styling */
 
 .comments-list {
   list-style: none;
@@ -123,16 +244,19 @@ ul {
 
 #new-answer-button {
   text-align: center;
-  margin: 30px;
+  margin: 30px auto;
+  width: 100%;
 }
 
-#new-comment-button {
+.new-comment-button {
   background-color: #43b5f2; /*light blue*/
+  border-color: #43b5f2;
   margin: 15px 0;
 }
 
 .answer-button {
   background-color: #0099ff; /*twittery blue*/
+  border-color: #0099ff;
   padding: 20px;
 }
 
@@ -181,17 +305,9 @@ ul {
   height: 0;
   padding: 0;
 
-  border-left: 5px solid transparent;
-  border-right: 5px solid transparent;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
   background: transparent;
-}
-
-#comment-vote-count {
-  font-size: 10px;
-  margin-top: -15px;
-  margin-left: -2px;
-  height: 10px;
-  padding-left: 4.5px;
 }
 
 .wrap-comment-vote-button {
@@ -201,7 +317,6 @@ ul {
 .comment-table {
   width: 100%;
   min-height: 20px;
-
 }
 
 #login_password {
@@ -229,7 +344,6 @@ ul {
   white-space: nowrap;
   text-overflow: ellipsis;*/
 
-
   word-wrap:break-word
 }
 
@@ -245,7 +359,6 @@ ul {
 .best {
   color: gold;
   font-size: 40px;
-
   padding-right: 10px;
 }
 
@@ -280,16 +393,95 @@ table.comment-table tr td:last-child {
 }
 
 .errors {
-  color: #ff6666;
-  border: solid 2px #ff6666;
+  background-color: #ff6666;
+  border: solid 1px #ff0000;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 18px;
   width: 50%;
-  margin: auto;
+  margin: 10px auto;
   text-align: center;
-  text-indent: -40px;
+}
+
+.flash {
+  background-color: #7c96b7;
+  border: solid 1px #777f89;
+  color: white;
+  border-radius: 5px;
+  padding: 5px;
+  font-size: 15px;
+  width: 100%;
+  margin: 10px auto;
+  text-align: center;
+}
+
+#popup-flash .errors {
+  width: 100%;
+}
+
+@media(max-width: 768px){
+  .errors{
+    width: 100%;
+  }
 }
 
 .author-name {
   padding-left: 30px;
   font-size: 12px;
 }
-/* end of Ian's styling */
+
+.apple_pagination {
+  background: #f1f1f1;
+  border: 1px solid #e5e5e5;
+  text-align: center;
+  cursor: default;
+}
+.apple_pagination a, .apple_pagination span {
+  padding: 0.2em 0.3em;
+}
+.apple_pagination .disabled {
+  color: #aaaaaa;
+}
+.apple_pagination .current {
+  font-style: normal;
+  font-weight: bold;
+  background-color: #bebebe;
+  display: inline-block;
+  width: 1.4em;
+  height: 1.4em;
+  line-height: 1.5;
+  -moz-border-radius: 1em;
+  -webkit-border-radius: 1em;
+  border-radius: 1em;
+  text-shadow: rgba(255, 255, 255, 0.8) 1px 1px 1px;
+}
+.apple_pagination a {
+  text-decoration: none;
+  color: black;
+}
+.apple_pagination a:hover, .apple_pagination a:focus {
+  text-decoration: underline;
+}
+
+.no-btn {
+  background:none;
+  border:none;
+  padding:0;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.vertical-center {
+  padding-top:20px;
+}
+
+.red {
+  color: #d9534f;
+}
+
+.bad-input {
+  border-color: #d9534f;
+  background-color: pink;
+}

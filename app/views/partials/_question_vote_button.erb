@@ -1,13 +1,13 @@
 <div class="wrap-vote-button">
   <form action="/questions/<%= @question.id %>/votes" method="post">
     <input type="hidden" name="vote-count" value="1" />
-    <input class="vote-button arrow-up" type="submit" value="Vote Up">
+    <input class="vote-button arrow-up <%= upvote(QuestionVote, 'question', @question.id) %>" type="submit" value="Vote Up">
   </form>
 
   <div id="vote-count" class="vote-count"><%=@question.vote_count%></div>
 
   <form action="/questions/<%= @question.id %>/votes" method="post">
     <input type="hidden" name="vote-count" value="-1" />
-    <input class="vote-button arrow-down" type="submit" value="Vote Down">
+    <input class="vote-button arrow-down <%= downvote(QuestionVote, 'question', @question.id) %>" type="submit" value="Vote Down">
   </form>
 </div>

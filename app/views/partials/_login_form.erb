@@ -1,21 +1,19 @@
-<div class="popup-login-form">
-  <div>LOGIN</div>
+<div class="popup-login-form popup-form">
+  <h2 class='popup-header'>Log In</h2>
+  <button class="cancel-button" id="new_user_cancel">&#9447;</button>
+  <div id='popup-flash'></div>
+  <form id='popup-login-form' class="form-horizontal" action='/login' method='POST'>
+    <div class='responses'>
+      <div class="form-group">
+        <input class="form-control" id="login_username" name="username" type="text" placeholder="Username">
+      </div>
 
-  <form class="form-horizontal" action='/user/login' method='POST'>
-  	<div class="form-group">
-  		<label class="col-lg-2 control-label" for="login_username">Username</label>
-  		<div class="col-lg-10">
-  	  	<input class="form-control" id="login_username" name="username" type="text" placeholder="Username">
-  	  </div>
-  	</div>
-
-  	<div class="form-group">
-  	<label class="col-lg-2 control-label" for="login_password">Password</label>
-  		<div class="col-lg-10">
-  		  <input class="form-control" id="login_password" name="password" type="password" placeholder="Password">
-  		  <button class="btn btn-success login-button" id="new_user_submit" type="submit">Login</button>
-        <button class="btn btn-success cancel-button" id="new_user_cancel">Cancel</button>
-  	  </div>
+      <div class="side-margins form-group">
+        <input class="form-control" id="login_password" name="password" type="password" placeholder="Password">
+      </div>
+    </div>
+    <div class='form-buttons text-center'>
+      <button class="btn login-button" id="new_user_submit" type="submit">Login</button>
     </div>
   </form>
 </div>
